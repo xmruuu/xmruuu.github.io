@@ -3,111 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <meta name="description" content="HSIEH MENG JU's Portfolio - AEC Informatics">
+    <title>HSIEH MENG JU - Portfolio</title>
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="./particle_text.css" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: white;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background-color: white; 
-        }
-        .home-button {
-            width: 24px;
-            height: 24px;
-            background-color: black;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .home-button:hover {
-            transform: scale(1.1);
-        }
-        .menu {
-            display: flex;
-            gap: 40px;
-            margin-right: 60px;
-        }
-        @media (max-width: 768px) {
-            .menu {
-                gap: 20px;
-                margin-right: 20px;
-            }
-            .menu a {
-                font-size: 14px;
-            }
-        }
-        @media (max-width: 576px) {
-            nav {
-                padding: 15px;
-            }
-            .menu {
-                gap: 15px;
-                margin-right: 10px;
-            }
-            .menu a {
-                font-size: 12px;
-            }
-            .home-button {
-                width: 20px;
-                height: 20px;
-            }
-        }
-        .menu a {
-            color: black;
-            text-decoration: none;
-            font-size: 16px;
-            transition: opacity 0.3s ease;
-        }
-        .menu a:hover {
-            opacity: 0.7;
-        }
+        /* Ensure the canvas covers the full viewport */
         canvas {
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Style for the navigation */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 2;
+            background: transparent;
+        }
+
+        /* Ensure text is visible over canvas */
+        .nav-link {
+            color: white !important;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #ddd !important;
+        }
+
+        /* Custom styles for mobile responsiveness */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: rgba(0, 0, 0, 0.8);
+                padding: 1rem;
+                border-radius: 8px;
+                margin-top: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Canvas for particle effect -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a href="/" class="home-button"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Home button -->
+            <a class="home-button navbar-brand" href="/">
+                <!-- Add your logo or home icon here -->
+            </a>
+
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!-- Navigation links -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <div class="menu">
-                    <a href="/main" class="nav-link">MAIN</a>
-                    <a href="/experience" class="nav-link">EXPERIENCE</a>
-                    <a href="/works" class="nav-link">WORKS</a>
-                    <a href="/blog" class="nav-link">BLOG</a>
-                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/main">MAIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/experience">EXPERIENCE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/works">WORKS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">BLOG</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-    <canvas></canvas>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
-    <script src="particle_text.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="./particle_text.js"></script>
 </body>
 </html>
