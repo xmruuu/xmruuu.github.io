@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background-color: white; 
+        }
+
+        .home-button {
+            width: 24px;
+            height: 24px;
+            background-color: black;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .home-button:hover {
+            transform: scale(1.1);
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+            margin-right: 60px;
+        }
+
+        .menu a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            transition: opacity 0.3s ease;
+        }
+
+        .menu a:hover {
+            opacity: 0.7;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="home-button"></a>
+        <div class="menu">
+            <a href="/main">MAIN</a>
+            <a href="/experience">EXPERIENCE</a>
+            <a href="/works">WORKS</a>
+            <a href="/blog">BLOG</a>
+        </div>
+    </nav>
+    <canvas></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
