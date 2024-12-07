@@ -1,25 +1,9 @@
 const canvas = document.querySelector("canvas");
 const gl = canvas.getContext("webgl");
 
-function resizeCanvas() {
-    // 取得實際視窗大小
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    // 更新 WebGL 視口
-    gl.viewport(0, 0, canvas.width, canvas.height);
-}
-
-// 初始化時調整大小
-resizeCanvas();
-
-// 監聽視窗大小變化
-window.addEventListener('resize', () => {
-    resizeCanvas();
-    createParticles(); // 重新創建粒子以適應新的尺寸
-});
-// Configurable parameters
+// 配置參數 - 保持固定粒子數
 const config = {
-    particleCount: 8000,
+    particleCount: 8000, // 保持原有粒子數
     textArray: ["HSIEH MENG JU", "AEC Infomatics"],
     mouseRadius: 0.1,
     particleSize: 1,
@@ -29,6 +13,66 @@ const config = {
     textChangeInterval: 5000,
     rotationForceMultiplier: 0
 };
+
+function getResponsiveTextSize() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    // 調整文字大小計算方式，確保在小螢幕上文字不會太大
+    const baseSize = Math.min(width, height);
+    return baseSize * 0.15; // 使用螢幕較小邊的15%作為文字大小
+}
+
+function getTextCoordinates(text) {
+    const ctx = document.createElement("canvas").getContext("2d");
+    ctx.canvas.width = canvas.width;
+    ctx.canvas.height = canvas.height;
+    
+    const fontSize = getResponsiveTextSize();
+    ctx.font = `900 ${fontSize}px Arial`;
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    
+    // 確保文字完全置中
+    const x = canvas.width / 2;
+    const y = canvas.height / 2;
+    
+    ctx.fillText(text, x, y);
+    
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    const coordinates = [];
+    
+    // 根據螢幕大小調整採樣密度，但保持較高的精度
+    const samplingDensity = Math.max(2, Math.floor(4 * (window.innerWidth / 1920)));
+    
+    for (let y = 0; y < canvas.height; y += samplingDensity) {
+        for (let x = 0; x < canvas.width; x += samplingDensity) {
+            const index = (y * canvas.width + x) * 4;
+            if (imageData[index + 3] > 128) {
+                coordinates.push({
+                    x: (x / canvas.width) * 2 - 1,
+                    y: (y / canvas.height) * -2 + 1
+                });
+            }
+        }
+    }
+    return coordinates;
+}
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+}
+
+// 初始化
+resizeCanvas();
+
+// 視窗大小改變時的處理
+window.addEventListener('resize', () => {
+    resizeCanvas();
+    createParticles();
+});
 
 let currentTextIndex = 0;
 let nextTextTimeout;
