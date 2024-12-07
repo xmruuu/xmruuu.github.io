@@ -1,10 +1,22 @@
 const canvas = document.querySelector("canvas");
 const gl = canvas.getContext("webgl");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-gl.viewport(0, 0, canvas.width, canvas.height);
+function resizeCanvas() {
+    // 取得實際視窗大小
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    // 更新 WebGL 視口
+    gl.viewport(0, 0, canvas.width, canvas.height);
+}
 
+// 初始化時調整大小
+resizeCanvas();
+
+// 監聽視窗大小變化
+window.addEventListener('resize', () => {
+    resizeCanvas();
+    createParticles(); // 重新創建粒子以適應新的尺寸
+});
 // Configurable parameters
 const config = {
     particleCount: 8000,
