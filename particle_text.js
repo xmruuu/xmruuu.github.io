@@ -86,19 +86,21 @@ function getTextCoordinates(text) {
     const ctx = document.createElement("canvas").getContext("2d");
     ctx.canvas.width = canvas.width;
     ctx.canvas.height = canvas.height;
-
-    // Bootstrap 
+    
     let divisor;
-    if (window.innerWidth < 576) {  
-        divisor = 10; 
-    } else if (window.innerWidth < 768) { 
-        divisor = 10;  
-    } else if (window.innerWidth < 992) { 
-        divisor = 10;  
-    } else if (window.innerWidth < 1200) {
+    if (window.innerWidth < 576) {        // xs - 特小型設備（手機豎屏）
+        divisor = 10;   
+    } else if (window.innerWidth < 768) {  // sm - 小型設備（手機橫屏）
+        divisor = 10;   
+    } else if (window.innerWidth < 992) {  // md - 中型設備（平板）
         divisor = 8;   
-    } else {                             
-        divisor = 6;  
+    } else if (window.innerWidth < 1200) { // lg - 大型設備（桌面顯示器）
+        divisor = 8;   
+    } else if (window.innerWidth < 1400) { // xl - 特大型設備
+        divisor = 6;   
+    } else {                               // xxl - 超大型設備
+        divisor = 6;   
+    }
     
     const fontSize = Math.min(canvas.width / divisor, canvas.height / divisor);
     ctx.font = `900 ${fontSize}px Arial`;
