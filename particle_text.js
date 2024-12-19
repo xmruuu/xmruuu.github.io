@@ -189,23 +189,28 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-canvas.addEventListener("mousemove", (event) => {
-    // 獲取 canvas 的邊界矩形
-    const rect = canvas.getBoundingClientRect();
-    
-    // 計算滑鼠在 canvas 內的相對位置
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    
-    // 轉換為 WebGL 座標系統
-    mouse.x = (x / canvas.width) * 2 - 1;
-    mouse.y = -(y / canvas.height) * 2 + 1; // 注意這裡的負號位置
-});
+// 检测是否为移动设备
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-canvas.addEventListener("mouseleave", () => {
+if (!isMobile) {
+    // 只在非移动设备上添加鼠标事件
+    canvas.addEventListener("mousemove", (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        mouse.x = (x / canvas.width) * 2 - 1;
+        mouse.y = -(y / canvas.height) * 2 + 1;
+    });
+
+    canvas.addEventListener("mouseleave", () => {
+        mouse.x = -500;
+        mouse.y = -500;
+    });
+} else {
+    // 在移动设备上始终保持粒子在原位
     mouse.x = -500;
     mouse.y = -500;
-});
+}
 
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
