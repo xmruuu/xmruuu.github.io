@@ -5,12 +5,15 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 gl.viewport(0, 0, canvas.width, canvas.height);
 
+// 检测是否为移动设备
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 // Configurable parameters
 const config = {
-    particleCount: 8000,
+    particleCount: isMobile ? 2000 : 8000,
     textArray: ["HSIEH MENG JU", "AEC Infomatics"],
     mouseRadius: 0.1,
-    particleSize: 1,
+    particleSize: isMobile ? 2 : 1,
     forceMultiplier: 0.001,
     returnSpeed: 0.001,
     velocityDamping: 0.96,
@@ -188,9 +191,6 @@ function animate() {
     gl.drawArrays(gl.POINTS, 0, config.particleCount);
     requestAnimationFrame(animate);
 }
-
-// 检测是否为移动设备
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (!isMobile) {
     // 只在非移动设备上添加鼠标事件
