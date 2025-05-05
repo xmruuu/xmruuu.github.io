@@ -27,29 +27,14 @@
     left: 0;
     width: 100%;
     background: white;
-    padding: 2rem 2rem;
+    padding: 1.5rem 2rem;
     z-index: 1000;
 }
 
 /* Home Button */
 .navbar-brand { 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 45px;
-    height: 45px; 
-    border-radius: 50%;
-    background: black;
     color: black;
-    text-decoration: none;  
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-.navbar-brand:hover { 
-    color: white;
-    text-decoration: none;  
-    transform: scale(1.1);
+    font-size: 2.0rem;
 }
 
 /* Navigation Links */
@@ -117,15 +102,15 @@
 
 /* Hero Section */
 #hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* Canvas Background */
 #particleCanvas {
     position: absolute;
-    inset: 0;
     z-index: 1;
 }
 
@@ -151,6 +136,10 @@
 
 /* 手機版隱藏非 hero section 的箭頭 */
 @media (max-width: 576px) {
+    #hero .scroll-down {
+        position: absolute;
+        bottom: 10rem; /* 調整距離底部的距離 */
+    }
     #about .scroll-down,
     #experience .scroll-down { 
         display: none;
@@ -491,15 +480,18 @@ footer p {
 /* ==========================================================================
    12. Blog Section
    ========================================================================== */
-   #blog {
-    padding: 5rem 2rem;
-}
-
 #blog h2 {
+    padding: 6rem 2rem;
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2rem;
-    font-weight: 600;
+    font-weight: 100;
+}
+
+.blog {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
 
@@ -574,11 +566,10 @@ main {
 }
 
 footer {
-    flex-shrink: 0;
     width: 100%;
     padding: 1rem;
     text-align: center;
     background: white;
     color: black;
-    font-size: 0.75rem;
+    padding: 1.5rem 2rem;
 }
