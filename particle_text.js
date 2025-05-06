@@ -1,239 +1,208 @@
-const canvas = document.querySelector("canvas");
+// WebGL 粒子特效（固定邏輯尺寸 + 等比例縮放 + 高效能觸控）
+const canvas = document.getElementById("particleCanvas");
 const gl = canvas.getContext("webgl");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-gl.viewport(0, 0, canvas.width, canvas.height);
-
-// 检测是否为移动设备
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-// Configurable parameters
+// 固定邏輯畫布大小（正方形）
+const LOGICAL_SIZE = 1000;
+canvas.width = LOGICAL_SIZE;
+canvas.height = LOGICAL_SIZE;
+
+// WebGL viewport 同步設定
+function resizeViewport() {
+  gl.viewport(0, 0, LOGICAL_SIZE, LOGICAL_SIZE);
+}
+resizeViewport();
+
 const config = {
-    particleCount: isMobile ? 2000 : 8000,
-    textArray: ["HSIEH MENG JU", "AEC Infomatics"],
-    mouseRadius: 0.1,
-    particleSize: isMobile ? 2 : 1,
-    forceMultiplier: 0.001,
-    returnSpeed: 0.001,
-    velocityDamping: 0.96,
-    textChangeInterval: 5000,
-    rotationForceMultiplier: 0
+  particleCount: 6000,
+  textArray: isMobile ? ["Bauinformatik", "AEC+Infomatics"] : ["Bauinformatik", "AEC+Infomatics"],
+  mouseRadius: 0.5,
+  particleSize:  1.0,
+  forceMultiplier: 0.001,
+  returnSpeed: isMobile ? 0.01 : 0.001,
+  velocityDamping: isMobile ? 0.86 : 0.96,
+  textChangeInterval: 10000
 };
 
 let currentTextIndex = 0;
-let nextTextTimeout;
 let textCoordinates = [];
-
-const mouse = {
-    x: -500,
-    y: -500,
-    radius: config.mouseRadius
-};
-
-const particles = [];
-for (let i = 0; i < config.particleCount; i++) {
-    particles.push({ x: 0, y: 0, baseX: 0, baseY: 0, vx: 0, vy: 0 });
-}
+const textCoordinateCache = {};
+const mouse = { x: -500, y: -500, radius: config.mouseRadius };
+const particles = Array.from({ length: config.particleCount }, () => ({ x: 0, y: 0, baseX: 0, baseY: 0, vx: 0, vy: 0 }));
 
 const vertexShaderSource = `
-    attribute vec2 a_position;
-    void main() {
-        gl_PointSize = ${config.particleSize.toFixed(1)};
-        gl_Position = vec4(a_position, 0.0, 1.0);
-    }
-`;
-
+attribute vec2 a_position;
+void main() {
+  gl_PointSize = ${config.particleSize.toFixed(1)};
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
 
 const fragmentShaderSource = `
-    precision mediump float;
-    void main() {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-    }
-`;
+precision mediump float;
+void main() {
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+}`;
 
-function createShader(gl, type, source) {
-    const shader = gl.createShader(type);
-    gl.shaderSource(shader, source);
-    gl.compileShader(shader);
-    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        console.error(gl.getShaderInfoLog(shader));
-        gl.deleteShader(shader);
-        return null;
-    }
-    return shader;
+function createShader(type, source) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, source);
+  gl.compileShader(shader);
+  if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw gl.getShaderInfoLog(shader);
+  return shader;
 }
 
-function createProgram(gl, vertexShader, fragmentShader) {
-    const program = gl.createProgram();
-    gl.attachShader(program, vertexShader);
-    gl.attachShader(program, fragmentShader);
-    gl.linkProgram(program);
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-        console.error(gl.getProgramInfoLog(program));
-        gl.deleteProgram(program);
-        return null;
-    }
-    return program;
+function createProgram(vShader, fShader) {
+  const program = gl.createProgram();
+  gl.attachShader(program, vShader);
+  gl.attachShader(program, fShader);
+  gl.linkProgram(program);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw gl.getProgramInfoLog(program);
+  return program;
 }
 
-const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
-const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
-const program = createProgram(gl, vertexShader, fragmentShader);
+const vertexShader = createShader(gl.VERTEX_SHADER, vertexShaderSource);
+const fragmentShader = createShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
+const program = createProgram(vertexShader, fragmentShader);
 
-const positionAttributeLocation = gl.getAttribLocation(program, "a_position");
+const positionLocation = gl.getAttribLocation(program, "a_position");
 const positionBuffer = gl.createBuffer();
 const positions = new Float32Array(config.particleCount * 2);
 
+gl.clearColor(1, 1, 1, 1);
+
 function getTextCoordinates(text) {
-    const ctx = document.createElement("canvas").getContext("2d");
-    ctx.canvas.width = canvas.width;
-    ctx.canvas.height = canvas.height;
-    
-    let divisor;
-    if (window.innerWidth < 576) {        // xs - 特小型設備（手機豎屏）
-        divisor = 10;   
-    } else if (window.innerWidth < 768) {  // sm - 小型設備（手機橫屏）
-        divisor = 8;   
-    } else {                               // lg - 大型設備（桌面顯示器）
-        divisor = 6;   
+  if (textCoordinateCache[text]) return textCoordinateCache[text];
+
+  const ctx = document.createElement("canvas").getContext("2d");
+  ctx.canvas.width = LOGICAL_SIZE;
+  ctx.canvas.height = LOGICAL_SIZE;
+  const fontSize = LOGICAL_SIZE / 10;
+  ctx.font = `900 ${fontSize}px Arial`;
+  ctx.fillStyle = "white";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+
+  const lines = text.split("\n");
+  const lineHeight = fontSize * 1.2;
+  const startY = LOGICAL_SIZE / 2 - (lineHeight * lines.length) / 2 + fontSize / 2;
+  lines.forEach((line, i) => ctx.fillText(line, LOGICAL_SIZE / 2, startY + i * lineHeight));
+
+  const imageData = ctx.getImageData(0, 0, LOGICAL_SIZE, LOGICAL_SIZE).data;
+  const coords = [];
+  for (let y = 0; y < LOGICAL_SIZE; y += 2) {
+    for (let x = 0; x < LOGICAL_SIZE; x += 2) {
+      const i = (y * LOGICAL_SIZE + x) * 4;
+      if (imageData[i + 3] > 128)
+        coords.push({ x: (x / LOGICAL_SIZE) * 2 - 1, y: (y / LOGICAL_SIZE) * -2 + 1 });
     }
-    
-    const fontSize = Math.min(canvas.width / divisor, canvas.height / divisor);
-    ctx.font = `900 ${fontSize}px Arial`;
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-    const coordinates = [];
-    for (let y = 0; y < canvas.height; y += 4) {
-        for (let x = 0; x < canvas.width; x += 4) {
-            const index = (y * canvas.width + x) * 4;
-            if (imageData[index + 3] > 128) {
-                coordinates.push({
-                    x: (x / canvas.width) * 2 - 1,
-                    y: (y / canvas.height) * -2 + 1
-                });
-            }
-        }
-    }
-    return coordinates;
+  }
+  return (textCoordinateCache[text] = coords);
 }
 
 function createParticles() {
-    textCoordinates = getTextCoordinates(config.textArray[currentTextIndex]);
-    for (let i = 0; i < config.particleCount; i++) {
-        const randomIndex = Math.floor(Math.random() * textCoordinates.length);
-        const { x, y } = textCoordinates[randomIndex];
-        particles[i].x = particles[i].baseX = x;
-        particles[i].y = particles[i].baseY = y;
-    }
+  textCoordinates = getTextCoordinates(config.textArray[currentTextIndex]);
+  particles.forEach((p) => {
+    const { x, y } = textCoordinates[Math.floor(Math.random() * textCoordinates.length)] || { x: 0, y: 0 };
+    p.x = p.baseX = x;
+    p.y = p.baseY = y;
+  });
 }
 
 function updateParticles() {
-    for (let i = 0; i < config.particleCount; i++) {
-        const particle = particles[i];
-        const dx = mouse.x - particle.x;
-        const dy = mouse.y - particle.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceDirectionX = dx / distance;
-        const forceDirectionY = dy / distance;
-        const maxDistance = mouse.radius;
-        const force = (maxDistance - distance) / maxDistance;
-        const directionX = forceDirectionX * force * config.forceMultiplier;
-        const directionY = forceDirectionY * force * config.forceMultiplier;
-
-        const angle = Math.atan2(dy, dx);
-
-        const rotationForceX = Math.sin(
-            -Math.cos(angle * -1) *
-            Math.sin(config.rotationForceMultiplier * Math.cos(force)) *
-            Math.sin(distance * distance) *
-            Math.sin(angle * distance)
-        );
-
-        const rotationForceY = Math.sin(
-            Math.cos(angle * 1) *
-            Math.sin(config.rotationForceMultiplier * Math.sin(force)) *
-            Math.sin(distance * distance) *
-            Math.cos(angle * distance)
-        );
-
-        if (distance < mouse.radius) {
-            particle.vx -= directionX + rotationForceX;
-            particle.vy -= directionY + rotationForceY;
-        } else {
-            particle.vx += (particle.baseX - particle.x) * config.returnSpeed;
-            particle.vy += (particle.baseY - particle.y) * config.returnSpeed;
+    particles.forEach((p, i) => {
+      if (!isMobile) { 
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius) {
+          const force = ((mouse.radius - dist) / mouse.radius) * config.forceMultiplier;
+          p.vx -= (dx / dist) * force;
+          p.vy -= (dy / dist) * force;
         }
-
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        particle.vx *= config.velocityDamping;
-        particle.vy *= config.velocityDamping;
-
-        positions[i * 2] = particle.x;
-        positions[i * 2 + 1] = particle.y;
-    }
+      }
+  
+      p.vx += (p.baseX - p.x) * config.returnSpeed;
+      p.vy += (p.baseY - p.y) * config.returnSpeed;
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= config.velocityDamping;
+      p.vy *= config.velocityDamping;
+      positions[i * 2] = p.x;
+      positions[i * 2 + 1] = p.y;
+    });
+  
     gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, positions, gl.DYNAMIC_DRAW);
+  }
+  
+function drawParticles() {
+  gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+  gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+  gl.enableVertexAttribArray(positionLocation);
+  gl.useProgram(program);
+  gl.drawArrays(gl.POINTS, 0, config.particleCount);
 }
 
 function animate() {
+  if (isMobile) {
+    setTimeout(() => {
+      updateParticles();
+      drawParticles();
+      requestAnimationFrame(animate);
+    }, 30);
+  } else {
     updateParticles();
-
-    gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-    gl.vertexAttribPointer(positionAttributeLocation, 2, gl.FLOAT, false, 0, 0);
-    gl.enableVertexAttribArray(positionAttributeLocation);
-    gl.useProgram(program);
-    gl.drawArrays(gl.POINTS, 0, config.particleCount);
+    drawParticles();
     requestAnimationFrame(animate);
+  }
 }
-
-if (!isMobile) {
-    // 只在非移动设备上添加鼠标事件
-    canvas.addEventListener("mousemove", (event) => {
-        const rect = canvas.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        mouse.x = (x / canvas.width) * 2 - 1;
-        mouse.y = -(y / canvas.height) * 2 + 1;
-    });
-
-    canvas.addEventListener("mouseleave", () => {
-        mouse.x = -500;
-        mouse.y = -500;
-    });
-} else {
-    // 在移动设备上始终保持粒子在原位
-    mouse.x = -500;
-    mouse.y = -500;
-}
-
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    createParticles();
-});
 
 function changeText() {
-    currentTextIndex = (currentTextIndex + 1) % config.textArray.length;
-    const newCoordinates = getTextCoordinates(config.textArray[currentTextIndex]);
-    for (let i = 0; i < config.particleCount; i++) {
-        const randomIndex = Math.floor(Math.random() * newCoordinates.length);
-        const { x, y } = newCoordinates[randomIndex];
-        particles[i].baseX = x;
-        particles[i].baseY = y;
-        particles[i].vx = 0;
-        particles[i].vy = 0;
-    }
-    nextTextTimeout = setTimeout(changeText, config.textChangeInterval);
+  currentTextIndex = (currentTextIndex + 1) % config.textArray.length;
+  const coords = getTextCoordinates(config.textArray[currentTextIndex]);
+  if (coords.length === 0) return;
+  textCoordinates = coords;
+  particles.forEach((p) => {
+    const { x, y } = coords[Math.floor(Math.random() * coords.length)] || { x: 0, y: 0 };
+    p.baseX = x;
+    p.baseY = y;
+    p.vx = p.vy = 0;
+  });
 }
 
-gl.clearColor(1, 1, 1, 1);
+// 事件處理（以邏輯座標為基準）
+function pointerToGLCoords(clientX, clientY) {
+  const rect = canvas.getBoundingClientRect();
+  const x = ((clientX - rect.left) / rect.width) * 2 - 1;
+  const y = -((clientY - rect.top) / rect.height) * 2 + 1;
+  return { x, y };
+}
+
+canvas.addEventListener("mousemove", (e) => {
+  Object.assign(mouse, pointerToGLCoords(e.clientX, e.clientY));
+});
+
+canvas.addEventListener("mouseleave", () => (mouse.x = mouse.y = -500));
+canvas.addEventListener("click", changeText);
+
+if (isMobile) {
+    canvas.addEventListener("touchstart", (e) => {
+      e.preventDefault(); // 防止滑動或雙擊放大干擾
+    }, { passive: false });
+  
+    canvas.addEventListener("touchend", () => {
+      changeText();      // ✅ 在手指放開時切換文字
+      mouse.x = -500;    // ⛔️ 保險防止擾動發生
+      mouse.y = -500;
+    });
+  }
+
+window.addEventListener("resize", () => {
+  resizeViewport();
+});
+
 createParticles();
 animate();
-nextTextTimeout = setTimeout(changeText, config.textChangeInterval);
