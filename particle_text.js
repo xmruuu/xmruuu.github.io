@@ -23,7 +23,7 @@ const config = {
   forceMultiplier: 0.001,
   returnSpeed: isMobile ? 0.01 : 0.001,
   velocityDamping: isMobile ? 0.86 : 0.96,
-  textChangeInterval: 3000
+  textChangeInterval: 5000
 };
 
 let currentTextIndex = 0;
