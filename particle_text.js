@@ -23,7 +23,7 @@ const config = {
   forceMultiplier: 0.001,
   returnSpeed: isMobile ? 0.01 : 0.001,
   velocityDamping: isMobile ? 0.86 : 0.96,
-  textChangeInterval: 10000
+  textChangeInterval: 3000
 };
 
 let currentTextIndex = 0;
@@ -206,3 +206,4 @@ window.addEventListener("resize", () => {
 
 createParticles();
 animate();
+setInterval(changeText, config.textChangeInterval); 
