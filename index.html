@@ -74,9 +74,12 @@
     <section id="hero">
         <div id="interaction-layer"></div>
         <!-- Interactive Background: Particle animation -->
-        <canvas id="particleCanvas"></canvas>
+        <div class="canvas-wrapper">
+            <canvas id="particleCanvas"></canvas>
+        </div>
         <!-- Scroll Indicator: Animated down arrow -->   
         <a href="#about" class="scroll-down">﹀</a>
+
     </section>
 
     <!-- About Content Section
@@ -86,96 +89,97 @@
          - Social links
          - Skills showcase -->
     <section id="about">
-        <h2>About Me</h2>
-        <!-- Profile Container: Personal information and image -->
-        <div class="profile">
-            <!-- Profile Image: Circular avatar -->
-            <div class="profile-image">
-                <img src="images/avatar.jpg" alt="Hsieh Meng Ju">
-            </div>
-            <h2>MENG-JU HSIEH | 謝孟儒</h2>
-            
-            <!-- Biography: Professional introduction and interests -->
-            <div class="bio">
-                <p>Hi, I am a master's researcher at <a href="https://www.ed.tum.de/ed/studium/studienangebot/information-technologies-for-the-built-environment-m-sc/" class="highlight"><span class="highlight">ITBE@TUM</span></a>. 
-                    Focused on using <strong>IT & software development skills</strong> to advance the digitalization of <strong>AEC industry</strong>. 
-                    Leveraging <strong>engineering data & digital twin models</strong> to simulate, optimize and inform decision-making. 
-                    My work aims to enhance the efficiency and quality of <strong>construction life-cycle management</strong>. 
-                    I believe that technology is the key to offer resilient and sustainable solutions for today's challenges. Additionally, I'm a hiking enthusiast🗻, guitarist🎵, and creative cook🍳!!</p>
-            </div>
+        <div class="container">
+            <h2>About Me</h2>
+            <!-- Profile Container: Personal information and image -->
+            <div class="profile">
+                <!-- Profile Image: Circular avatar -->
+                <div class="profile-image">
+                    <img src="images/avatar.jpg" alt="Hsieh Meng Ju">
+                </div>
+                <h2>MENG-JU HSIEH | 謝孟儒</h2>
+                
+                <!-- Biography: Professional introduction and interests -->
+                <div class="bio">
+                    <p>Hi, I am a master's researcher at <a href="https://www.ed.tum.de/ed/studium/studienangebot/information-technologies-for-the-built-environment-m-sc/" class="highlight"><span class="highlight">ITBE@TUM</span></a>. 
+                        Focused on using <strong>IT & software development skills</strong> to advance the digitalization of <strong>AEC industry</strong>. 
+                        Leveraging <strong>engineering data & digital twin models</strong> to simulate, optimize and inform decision-making. 
+                        My work aims to enhance the efficiency and quality of <strong>construction life-cycle management</strong>. 
+                        I believe that technology is the key to offer resilient and sustainable solutions for today's challenges. Additionally, I'm a hiking enthusiast🗻, guitarist🎵, and creative cook🍳!!</p>
+                </div>
+                <!-- Social Media Links: Professional network connections -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/xmruuu/"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="https://github.com/xmruuu"><i class="fa fa-github"></i></a>
+                    <a href="files/Resume_2025.pdf"><i class="fa fa-file-pdf-o"></i></a>
+                    <a href="mj.hsieh@tum.de"><i class="fa fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/xmruuu/"><i class="fa fa-instagram"></i></a>
+                </div>
 
-            <!-- Social Media Links: Professional network connections -->
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/xmruuu/"><i class="fa fa-linkedin-square"></i></a>
-                <a href="https://github.com/xmruuu"><i class="fa fa-github"></i></a>
-                <a href="files/Resume_2025.pdf"><i class="fa fa-file-pdf-o"></i></a>
-                <a href="mj.hsieh@tum.de"><i class="fa fa-envelope"></i></a>
-                <a href="https://www.instagram.com/xmruuu/"><i class="fa fa-instagram"></i></a>
-            </div>
+                <!-- Skills Section: Technical and software capabilities -->
+                <div class="skills">
+                    <!-- Programming Skills -->
+                    <div class="programming-skills">
+                        <div class="skill-icons">
+                            <div class="skill-item">
+                                <img src="images/skills/CSS3.svg" alt="CSS">
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/HTML5.svg" alt="HTML5">
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/JavaScript.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/csharp.svg" alt="C#">
+                                <span>C#</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/NET core.svg" alt=".NET Core">
+                                <span>.NET Core</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/Python.svg" alt="Python">
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/MySQL.svg" alt="MySQL">
+                                <span>MySQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/naviswork.svg" alt="NavisWork">
+                                <span>NavisWork</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="images/skills/bim360.svg" alt="BIM360">
+                                <span>BIM360</span>
+                            </div>
 
-            <!-- Skills Section: Technical and software capabilities -->
-            <div class="skills">
-                <!-- Programming Skills -->
-                <div class="programming-skills">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Software Skills -->
+                    <div class="software-skills">
                     <div class="skill-icons">
                         <div class="skill-item">
-                            <img src="images/skills/CSS3.svg" alt="CSS">
-                            <span>CSS3</span>
+                            <img src="images/skills/grasshopper.png" alt="Grasshopper" class="gh">
                         </div>
                         <div class="skill-item">
-                            <img src="images/skills/HTML5.svg" alt="HTML5">
-                            <span>HTML5</span>
+                            <img src="images/skills/rhinoceros.png" alt="Rhinoceros">
                         </div>
                         <div class="skill-item">
-                            <img src="images/skills/JavaScript.svg" alt="JavaScript">
-                            <span>JavaScript</span>
+                            <img src="images/skills/dynamo.png" alt="Dynamo">
                         </div>
                         <div class="skill-item">
-                            <img src="images/skills/csharp.svg" alt="C#">
-                            <span>C#</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="images/skills/NET core.svg" alt=".NET Core">
-                            <span>.NET Core</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="images/skills/Python.svg" alt="Python">
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="images/skills/MySQL.svg" alt="MySQL">
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="images/skills/naviswork.svg" alt="NavisWork">
-                            <span>NavisWork</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="images/skills/bim360.svg" alt="BIM360">
-                            <span>BIM360</span>
-                        </div>
-
+                            <img src="images/skills/revit.png" alt="Revit">
                         </div>
                     </div>
                 </div>
-                <!-- Software Skills -->
-                <div class="software-skills">
-                <div class="skill-icons">
-                    <div class="skill-item">
-                        <img src="images/skills/grasshopper.png" alt="Grasshopper" class="gh">
-                    </div>
-                    <div class="skill-item">
-                        <img src="images/skills/rhinoceros.png" alt="Rhinoceros">
-                    </div>
-                    <div class="skill-item">
-                        <img src="images/skills/dynamo.png" alt="Dynamo">
-                    </div>
-                    <div class="skill-item">
-                        <img src="images/skills/revit.png" alt="Revit">
-                    </div>
-                </div>
-            </div>
-            <a href="#experience" class="scroll-down">﹀</a>
+                <a href="#experience" class="scroll-down">﹀</a>
+        </div>
     </section>
 
     <!-- Experience Section
@@ -183,68 +187,70 @@
          - Professional experience
          - Timeline layout -->
     <section id="experience">
-        <!-- Education History -->
-        <h2 class="experience-section-title">Education</h2>
-        <div class="education">
-            <div style="display: flex; justify-content: space-between;">
-                <p><strong>Technical University of Munich</strong></p>
-                <p>Munich, Germany </p>
+        <div class="container">
+            <!-- Education History -->
+            <h2 class="experience-section-title">Education</h2>
+            <div class="education">
+                <div style="display: flex; justify-content: space-between;">
+                    <p><strong>Technical University of Munich</strong></p>
+                    <p>Munich, Germany </p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><i>Master of Science in Information Technologies for the Built Environment</i></p>
+                    <p><i>2024 - 2026</i></p>
+                </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><i>Master of Science in Information Technologies for the Built Environment</i></p>
-                <p><i>2024 - 2026</i></p>
+            <div class="education">
+                <div style="display: flex; justify-content: space-between;">
+                    <p><strong>Chung Yuan Christian University</strong></p>
+                    <p>Taoyuan, Taiwan</p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><i>Bachelor of Architecture</i></p>
+                    <p><i>2018 - 2023</i></p>
+                </div>
             </div>
-        </div>
-        <div class="education">
-            <div style="display: flex; justify-content: space-between;">
-                <p><strong>Chung Yuan Christian University</strong></p>
-                <p>Taoyuan, Taiwan</p>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><i>Bachelor of Architecture</i></p>
-                <p><i>2018 - 2023</i></p>
-            </div>
-        </div>
 
-        <!-- Professional Experience -->
-        <h2 class="experience-section-title">Experience</h2>
-        <div class="experience">
-            <div style="display: flex; justify-content: space-between;">
-                <p><strong>SUNHOU Architects & Partners Association</strong></p>
-                <p>Taoyuan, Taiwan</p>
+            <!-- Professional Experience -->
+            <h2 class="experience-section-title">Experience</h2>
+            <div class="experience">
+                <div style="display: flex; justify-content: space-between;">
+                    <p><strong>SUNHOU Architects & Partners Association</strong></p>
+                    <p>Taoyuan, Taiwan</p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><i>Project Executive (Co-op)</i></p>
+                    <p><i>2020-2022, 2023-2024</i></p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><strong>CYCU Research Centre for Digital</strong></p>
+                    <p>Taoyuan, Taiwan</p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><i>Co-Founder & Instructor</i></p>
+                    <p><i>2021 - 2023</i></p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><strong>CYCU Higher Education Sprout Project</strong></p>
+                    <p>Taoyuan, Taiwan</p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><i>Publication Editor</i></p>
+                    <p><i>2020 - 2023</i></p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><strong>LWK + PARTNERS</strong></p>
+                    <p>Beijing, China</p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p><i>Internship</i></p>
+                    <p><i>2019</i></p>
+                </div>
             </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><i>Project Executive (Co-op)</i></p>
-                <p><i>2020-2022, 2023-2024</i></p>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><strong>CYCU Research Centre for Digital</strong></p>
-                <p>Taoyuan, Taiwan</p>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><i>Co-Founder & Instructor</i></p>
-                <p><i>2021 - 2023</i></p>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><strong>CYCU Higher Education Sprout Project</strong></p>
-                <p>Taoyuan, Taiwan</p>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><i>Publication Editor</i></p>
-                <p><i>2020 - 2023</i></p>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><strong>LWK + PARTNERS</strong></p>
-                <p>Beijing, China</p>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <p><i>Internship</i></p>
-                <p><i>2019</i></p>
-            </div>
-        </div>
 
-        <!-- Section Navigation -->
-        <a href="#works" class="scroll-down">﹀</a>
+            <!-- Section Navigation -->
+            <a href="#works" class="scroll-down">﹀</a>
+        </div>
     </section>
 
     <!-- Works Section
