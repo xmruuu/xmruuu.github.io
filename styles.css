@@ -129,6 +129,22 @@
     overflow: hidden;
 }
 
+.hero-subtitle {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    font-size: 1.25rem;
+    color: #444;
+    font-weight: 300;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 /* Canvas Background */
 #particleCanvas {
     position: absolute;
@@ -584,6 +600,11 @@ footer p {
     }
 }
 
+@media (max-width: 576px) {
+    .hero-subtitle {
+        font-size: 0.95rem; /* 手機版較小的字體大小 */
+    }
+}
 /* ==========================================================================
    13. Footer & Page Layout
    ========================================================================== */
