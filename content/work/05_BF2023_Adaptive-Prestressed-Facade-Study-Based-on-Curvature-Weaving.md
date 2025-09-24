@@ -6,14 +6,14 @@ image: "img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature
 tags: ["Fabrication", "Computation", "Architecture", "Taoyuan, Taiwan"]
 ---
 
-![image](img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-01.webp)
+![image](/img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-01.webp)
 
-![image](img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-02.webp)
+![image](/img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-02.webp)
 
-![image](img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-03.webp)
+![image](/img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-03.webp)
 
-![image](img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-04.webp)
+![image](/img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-04.webp)
 
-![image](img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-05.webp)
+![image](/img/works/05_BF2023_Adaptive-Prestressed-Facade-Study-Based-on-Curvature-Weaving/Adaptive-Façade-Study-Based-on-Curvature-Weaving-05.webp)
 
 

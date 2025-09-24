@@ -6,14 +6,14 @@ image: "img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/cove
 tags: ["Simulation", "Computation", "Planning", "Taoyuan, Taiwan"]
 ---
 
-![image](img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-01.webp)
+![image](/img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-01.webp)
 
-![image](img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-02.webp)
+![image](/img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-02.webp)
 
-![image](img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-03.webp)
+![image](/img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-03.webp)
 
-![image](img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-04.webp)
+![image](/img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-04.webp)
 
-![image](img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-05.webp)
+![image](/img/works/06_BF2023_Utilizing-Agent-Based-Model-for-Campus-Planning/Utilizing-Agent-Based-Model-for-Campus-Planning-05.webp)
 
 

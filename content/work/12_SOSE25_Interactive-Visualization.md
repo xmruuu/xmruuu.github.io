@@ -16,21 +16,21 @@ coverFit: "contain"
 ### Introduction
 This course was carried out in collaboration with [XR HUB Bavaria](https://xrhub-bavaria.de/), focusing on the production of an animation themed around **future energy**. The final work was showcased in the dome theater at [1E9 & Festival der Zukunft](https://www.1e9.community/festival-der-zukunft/2025/deutsch). Our team selected the **Dyson Swarm** as the central concept, and most of the modeling was accomplished using **Blender**, where we made extensive use of parametric node systems to generate environments and handle complex geometries. Producing an animation tailored for a spherical dome theater was a unique challenge, and we are proud to have successfully completed it and received applause from the audience at the conclusion of the event.
 
-![image](img/works/12_SOSE25_Interactive-Visualization/Slide1.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/Slide1.webp)
 
-![image](img/works/12_SOSE25_Interactive-Visualization/Slide2.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/Slide2.webp)
 
-![image](img/works/12_SOSE25_Interactive-Visualization/Slide3.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/Slide3.webp)
 
-![image](img/works/12_SOSE25_Interactive-Visualization/Slide6.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/Slide6.webp)
 
-![image](img/works/12_SOSE25_Interactive-Visualization/Slide7.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/Slide7.webp)
 
-![image](img/works/12_SOSE25_Interactive-Visualization/Slide8.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/Slide8.webp)
 
-![image](img/works/12_SOSE25_Interactive-Visualization/Slide9.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/Slide9.webp)
 
-![image](img/works/12_SOSE25_Interactive-Visualization/IV_2025_final_film.webp)
+![image](/img/works/12_SOSE25_Interactive-Visualization/IV_2025_final_film.webp)
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
   <figure class="m-0">

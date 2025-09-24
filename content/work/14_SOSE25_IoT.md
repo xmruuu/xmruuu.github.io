@@ -20,7 +20,7 @@ coverFit: "contain"
 This project delivers a low‑cost indoor monitoring pipeline. Seeeduino LoRaWAN sensor nodes stream observations to TTN and the FROST Server (MongoDB), and a Cesium‑based web dashboard provides synchronized charts, historical playback, and a comfort index.
 
 <a href="https://xmruuu.github.io/25SS_IoT_Indoor-Ambient-Monitoring/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 underline">Open Demo <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
-![image](img/works/14_SOSE25_IoT/cover.webp)
+![image](/img/works/14_SOSE25_IoT/cover.webp)
 
 ### System Framework
 The system architecture is divided into hardware and software components. On the hardware side, multiple indoor environmental sensors (measuring CO, PM2.5, temperature, humidity, etc.) transmit data via LoRa using the CayenneLPP encoding format through a LoRaWAN gateway to IoT cloud platforms such as TTN and SWM. On the software side, these platforms forward the data to the FROST Server via the standardized SensorThings API, where it is stored in MongoDB. Meanwhile, the semantic building model of TUM in CityGML LOD 3.0 is processed with FME and converted into Cesium-compatible 3D Tiles. Finally, JavaScript is used to fetch live or historical data from the FROST Server and MongoDB, integrating it into Cesium 3D visualizations and interactive dashboards for end-user applications.

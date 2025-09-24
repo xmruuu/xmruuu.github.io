@@ -6,14 +6,14 @@ image: "img/works/04_BF2023_Taipei-Intelligence-Hill/cover.webp"
 tags: ["Competition", "Planning", "Architecture", "Taipei, Taiwan"]
 ---
 
-![image](img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-01.webp)
+![image](/img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-01.webp)
 
-![image](img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-02.webp)
+![image](/img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-02.webp)
 
-![image](img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-03.webp)
+![image](/img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-03.webp)
 
-![image](img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-04.webp)
+![image](/img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-04.webp)
 
-![image](img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-05.webp)
+![image](/img/works/04_BF2023_Taipei-Intelligence-Hill/mit-taipei-intelligence-hill-05.webp)
 
 

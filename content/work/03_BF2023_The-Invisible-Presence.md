@@ -6,12 +6,12 @@ image: "img/works/03_BF2023_The-Invisible-Presence/cover.webp"
 tags: ["Competition", "Planning", "Architecture", "Taipei, Taiwan"]
 ---
 
-![image](img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-01.webp)
+![image](/img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-01.webp)
 
-![image](img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-02.webp)
+![image](/img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-02.webp)
 
-![image](img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-03.webp)
+![image](/img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-03.webp)
 
-![image](img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-04.webp)
+![image](/img/works/03_BF2023_The-Invisible-Presence/The-Invisible-Presence-04.webp)
 
 
