@@ -40,6 +40,7 @@
       pointer-events: none;
       z-index: 2147483647;
       transition: transform 0.1s ease;
+      will-change: transform; /* hint for compositor */
     }
     
     .custom-cursor::after {
@@ -121,119 +122,80 @@
   </div>
 
   <script>
-    // Custom Cursor
+    // Custom Cursor (performance-optimized)
     const cursor = document.querySelector('.custom-cursor');
     const isTouch = matchMedia('(hover: none), (pointer: coarse)').matches;
-    if (isTouch && cursor) {
-      cursor.style.display = 'none';
-    }
-    let isArrowMode = false;
+    if (isTouch && cursor) { cursor.style.display = 'none'; }
     let mouseX = 0, mouseY = 0;
-    
-    // Mouse move event
-    if (!isTouch) document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      const windowHeight = window.innerHeight;
-      const isInBottomArea = mouseY > windowHeight * 0.8; // Bottom 20% of screen
-      
-      // Check if hovering over clickable elements
-      const target = e.target;
-      const isClickable = target.tagName === 'A' || 
-                         target.tagName === 'BUTTON' || 
-                         target.classList.contains('clickable') ||
-                         target.closest('a') ||
-                         target.closest('button');
-      
-      if (isClickable) {
-        // Show circular cursor for clickable elements
-        cursor.style.display = 'block';
-        cursor.style.left = e.clientX - 8 + 'px';
-        cursor.style.top = e.clientY - 8 + 'px';
-        cursor.style.background = '#3b82f6';
-        cursor.style.borderRadius = '50%';
-        isArrowMode = false;
-      } else if (isInBottomArea) {
-        // Only show arrow in allowed sections; never in footer or outside sections
-        const currentSection = target.closest('section');
-        const sectionId = currentSection ? currentSection.id : '';
-        const allowArrow = sectionId === 'hero' || sectionId === 'about' || sectionId === 'experience';
-        if (allowArrow) {
-          // Show arrow cursor in bottom area (except works section)
-          cursor.style.display = 'block';
-          cursor.style.left = e.clientX - 16 + 'px';
-          cursor.style.top = e.clientY - 16 + 'px';
+    let state = { clickable: false, arrow: false };
+    let prev = { clickable: null, arrow: null };
+    let rafPending = false;
+
+    function isElementClickable(el){
+      return !!(el && (el.tagName === 'A' || el.tagName === 'BUTTON' || el.closest('a,button,[role="button"],.clickable')));
+    }
+
+    function allowArrowInSection(el){
+      const sec = el && el.closest ? el.closest('section') : null;
+      const id = sec ? sec.id : '';
+      return id === 'hero' || id === 'about' || id === 'experience';
+    }
+
+    function updateCursor(){
+      rafPending = false;
+      // Position via transform to avoid layout thrash
+      const baseScale = 1;
+      const scale = state.clickable ? 1.15 : baseScale;
+      cursor.style.transform = `translate3d(${mouseX - 8}px, ${mouseY - 8}px, 0) scale(${scale})`;
+
+      // Arrow mode only in bottom 20% and allowed sections
+      if (state.arrow !== prev.arrow){
+        if (state.arrow){
+          cursor.style.width = '32px';
+          cursor.style.height = '32px';
           cursor.style.background = 'transparent';
           cursor.style.borderRadius = '0';
-          cursor.innerHTML = '﹀';
+          cursor.textContent = '﹀';
           cursor.style.fontSize = '32px';
           cursor.style.color = '#3b82f6';
           cursor.style.fontWeight = 'bold';
           cursor.style.textAlign = 'center';
           cursor.style.lineHeight = '32px';
-          isArrowMode = true;
         } else {
-          // Show circular cursor in works section
-          cursor.style.display = 'block';
-          cursor.style.left = e.clientX - 8 + 'px';
-          cursor.style.top = e.clientY - 8 + 'px';
+          cursor.textContent = '';
+          cursor.style.width = '16px';
+          cursor.style.height = '16px';
           cursor.style.background = '#3b82f6';
           cursor.style.borderRadius = '50%';
-          cursor.innerHTML = '';
-          isArrowMode = false;
         }
-      } else {
-        // Show circular cursor for normal areas
-        cursor.style.display = 'block';
-        cursor.style.left = e.clientX - 8 + 'px';
-        cursor.style.top = e.clientY - 8 + 'px';
-        cursor.style.background = '#3b82f6';
-        cursor.style.borderRadius = '50%';
-        cursor.innerHTML = '';
-        isArrowMode = false;
+        prev.arrow = state.arrow;
       }
-    });
-    
-    // Mouse click events
+
+      if (state.clickable !== prev.clickable){
+        cursor.classList.toggle('hover', !!state.clickable);
+        prev.clickable = state.clickable;
+      }
+    }
+
+    if (!isTouch) document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      const isInBottom = mouseY > window.innerHeight * 0.8;
+      const clickable = isElementClickable(e.target);
+      const arrowAllowed = isInBottom && allowArrowInSection(e.target);
+      state.clickable = clickable;
+      state.arrow = !clickable && arrowAllowed;
+      if (!rafPending){ rafPending = true; requestAnimationFrame(updateCursor); }
+    }, { passive: true });
+
     if (!isTouch) document.addEventListener('mousedown', () => {
-      if (isArrowMode) {
-        // Arrow click - scroll to next section and immediately switch to circular cursor
+      if (state.arrow){
         const currentSection = document.elementFromPoint(mouseX, mouseY)?.closest('section');
-        if (currentSection) {
-          const nextSection = currentSection.nextElementSibling;
-          if (nextSection) {
-            nextSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-        // Immediately switch to circular cursor
-        cursor.style.display = 'block';
-        cursor.style.left = mouseX - 8 + 'px';
-        cursor.style.top = mouseY - 8 + 'px';
-        cursor.style.background = '#3b82f6';
-        cursor.style.borderRadius = '50%';
-        cursor.innerHTML = '';
-        isArrowMode = false;
-      } else {
-        cursor.classList.add('click');
+        const next = currentSection ? currentSection.nextElementSibling : null;
+        if (next) next.scrollIntoView({ behavior: 'smooth' });
+        state.arrow = false;
+        if (!rafPending){ rafPending = true; requestAnimationFrame(updateCursor); }
       }
-    });
-    
-    if (!isTouch) document.addEventListener('mouseup', () => {
-      cursor.classList.remove('click');
-    });
-    
-    // Hover effects for clickable elements
-    if (!isTouch) document.addEventListener('mouseover', (e) => {
-      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.onclick) {
-        cursor.classList.add('hover');
-      }
-    });
-    
-    if (!isTouch) document.addEventListener('mouseout', (e) => {
-      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.onclick) {
-        cursor.classList.remove('hover');
-      }
-    });
+    }, { passive: true });
     
     // Lightbox functions
     function openLightbox(src, alt) {
