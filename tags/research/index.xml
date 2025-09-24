@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Research on HSIEH MENG JU</title><link>https://xmruuu.github.io/tags/research/</link><description>Recent content in Research on HSIEH MENG JU</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xmruuu.github.io/tags/research/index.xml" rel="self" type="application/rss+xml"/><item><title>IFC to Graph Structure Semantic Modeling</title><link>https://xmruuu.github.io/work/15_sose25_semantic-modeling/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/15_sose25_semantic-modeling/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;The first step in building the extensible analytics framework&lt;/h2&gt;
+ 
+ 
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Personal Research&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/research/"&gt;Research&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;I developed a complete &lt;strong&gt;IFC-to-graph structure pipeline&lt;/strong&gt;, leveraging &lt;strong&gt;IfcOpenShell&lt;/strong&gt; for data extraction and &lt;strong&gt;D3.js&lt;/strong&gt; for visualization. The system unfolds each hierarchical level of an IFC model and maps its attributes and values into an &lt;strong&gt;interactive graph&lt;/strong&gt;, enabling intuitive exploration of complex building projects. This represents the first step toward decomposing and understanding architectural data. Future plans include integrating &lt;strong&gt;LLMs (e.g., LangGraph)&lt;/strong&gt; for semantic interpretation and extending the framework to support refined analyses of physical environments, structural properties, and topological relationships. Establishing &lt;strong&gt;semantic modeling&lt;/strong&gt; as the foundation is essential for enabling computers and machines to read building information clearly and accurately, I am continuously exploring.&lt;/p&gt;</description></item><item><title>Multi-Model Comparison for Tree Species Classification in Germany</title><link>https://xmruuu.github.io/work/13_sose25_ds-in-earth-observation/</link><pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/13_sose25_ds-in-earth-observation/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 Data Science in Earth Observation Project Report&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Data Science in Earth Observation, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr. Xiaoxiang Zhu, Dr. Muhammad Shahzad, Dr. Andrés Camero Unzueta&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Pei-Ling Song, Hongyu Jiang, Hoi-Wang Lo, Kit-Lung Chan&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/research/"&gt;Research&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ml/"&gt;ML&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;The aim of this project is to classify dominant tree species across Germany by leveraging satellite image time series. Forest management
+practices benefit from knowledge of species distribution, which supports site-adapted tree selection and climate-resilient forest
+planning. Tree species labels in the TreeSatAI dataset are organised hierarchically (leaf type, genus, species), allowing us to develop
+classification methods that exploit this structure to improve model performance.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Munich, Germany on HSIEH MENG JU</title><link>https://xmruuu.github.io/tags/munich-germany/</link><description>Recent content in Munich, Germany on HSIEH MENG JU</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xmruuu.github.io/tags/munich-germany/index.xml" rel="self" type="application/rss+xml"/><item><title>Fisrt Code Jam Interview Experience</title><link>https://xmruuu.github.io/blog/2025-09-01/</link><pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/blog/2025-09-01/</guid><description>&lt;p&gt;I recently joined a Code Jam interview at mod.construction, which felt more like a fun three-hour mini hackathon than a typical test. The challenge was to create a graph structure that an LLM could understand, but this time the hierarchy was built on topology instead of the usual ways I’ve worked with before. There were just three of us participating, which made the whole thing feel collaborative and engaging. To top it off, I was really excited to receive an offer afterward.&lt;/p&gt;</description></item><item><title>IFC to Graph Structure Semantic Modeling</title><link>https://xmruuu.github.io/work/15_sose25_semantic-modeling/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/15_sose25_semantic-modeling/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;The first step in building the extensible analytics framework&lt;/h2&gt;
+ 
+ 
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Personal Research&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/research/"&gt;Research&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;I developed a complete &lt;strong&gt;IFC-to-graph structure pipeline&lt;/strong&gt;, leveraging &lt;strong&gt;IfcOpenShell&lt;/strong&gt; for data extraction and &lt;strong&gt;D3.js&lt;/strong&gt; for visualization. The system unfolds each hierarchical level of an IFC model and maps its attributes and values into an &lt;strong&gt;interactive graph&lt;/strong&gt;, enabling intuitive exploration of complex building projects. This represents the first step toward decomposing and understanding architectural data. Future plans include integrating &lt;strong&gt;LLMs (e.g., LangGraph)&lt;/strong&gt; for semantic interpretation and extending the framework to support refined analyses of physical environments, structural properties, and topological relationships. Establishing &lt;strong&gt;semantic modeling&lt;/strong&gt; as the foundation is essential for enabling computers and machines to read building information clearly and accurately, I am continuously exploring.&lt;/p&gt;</description></item><item><title>Learning Journey in ITBE – One Year Later</title><link>https://xmruuu.github.io/blog/2025-08-10/</link><pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/blog/2025-08-10/</guid><description>&lt;p&gt;&lt;img src="https://xmruuu.github.io/img/Blog/ITBE/group_pic.webp" alt="ITBE Group Photo" class="max-w-full h-auto cursor-pointer hover:opacity-90 transition-opacity" loading="lazy" onclick="openLightbox('\/img\/Blog\/ITBE\/group_pic.webp', 'ITBE Group Photo')"&gt;
+&lt;/p&gt;
+&lt;p&gt;It’s been a year since I started the Information Technologies for the Built Environment (ITBE) program at TUM, and looking back now, I can hardly believe how much I’ve grown.&lt;/p&gt;
+&lt;p&gt;When I first joined, I was basically a beginner, my only “programming” experience was using Grasshopper. I had never really written code. Fast forward a year, and things feel so different: I’ve gone from a visual-programming-only newbie to someone who can actually code, analyze data, and build systems. It’s been challenging, but also incredibly rewarding.&lt;/p&gt;</description></item><item><title>Esemble Learning for IFC Feature Prediction</title><link>https://xmruuu.github.io/work/16_sose25_software_lab/</link><pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/16_sose25_software_lab/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;2025 Software Lab - IFC model analysis to gain insights into design processes &lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Computing in Civil and Building Engineering, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr.-Ing. Sebastian Esser, Dr. Zijian Wang, Dr. Matthias Weise (AEC3)&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Tan-An Ha, Kai Dietmair&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ml/"&gt;ML&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Analyzing IFC models provides valuable insights into design processes and supports the development of intelligent model evaluation frameworks. We employ &lt;strong&gt;IfcOpenShell&lt;/strong&gt; to extract &lt;strong&gt;geometric&lt;/strong&gt;, &lt;strong&gt;attribute&lt;/strong&gt;, &lt;strong&gt;topological&lt;/strong&gt;, and &lt;strong&gt;relational features&lt;/strong&gt; from IFC data. Building on the original scope of IFC model analysis, our study constructs a dataset of more than 300 IFC models, which are used to train and evaluate predictive frameworks. We focus on selected attributes (e.g., &lt;strong&gt;U-Value&lt;/strong&gt;, &lt;strong&gt;FireRating&lt;/strong&gt;, &lt;strong&gt;IsExternal&lt;/strong&gt;) and compare prediction tasks across different value types (&lt;strong&gt;Boolean&lt;/strong&gt;, &lt;strong&gt;numeric&lt;/strong&gt;, &lt;strong&gt;categorical&lt;/strong&gt;). To achieve robust performance, we adopt an ensemble learning strategy that integrates &lt;strong&gt;rule-based systems&lt;/strong&gt;, &lt;strong&gt;traditional machine learning&lt;/strong&gt;, and &lt;strong&gt;deep learning&lt;/strong&gt; models. This multi-model approach enables us to assess model-specific strengths, improve semantic inference of IFC attributes, and establish a comprehensive evaluation of prediction accuracy across heterogeneous property types.&lt;/p&gt;</description></item><item><title>IoT-based Indoor Ambient Monitoring</title><link>https://xmruuu.github.io/work/14_sose25_iot/</link><pubDate>Mon, 07 Jul 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/14_sose25_iot/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;25SS Geo Sensor Web and the Internet of Things Course Project&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Geoinformatics, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Univ.-Prof. Dr. rer. nat. Thomas H. Kolbe, Joseph Gitahi, M.Sc., Benedikt Schwab, M.Sc.&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Pei-Ling Song, Kit-Lung Chan&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/iot/"&gt;IoT&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/digital-twin/"&gt;Digital Twin&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This project delivers a low‑cost indoor monitoring pipeline. Seeeduino LoRaWAN sensor nodes stream observations to TTN and the FROST Server (MongoDB), and a Cesium‑based web dashboard provides synchronized charts, historical playback, and a comfort index.&lt;/p&gt;</description></item><item><title>Multi-Model Comparison for Tree Species Classification in Germany</title><link>https://xmruuu.github.io/work/13_sose25_ds-in-earth-observation/</link><pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/13_sose25_ds-in-earth-observation/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 Data Science in Earth Observation Project Report&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Data Science in Earth Observation, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr. Xiaoxiang Zhu, Dr. Muhammad Shahzad, Dr. Andrés Camero Unzueta&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Pei-Ling Song, Hongyu Jiang, Hoi-Wang Lo, Kit-Lung Chan&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/research/"&gt;Research&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ml/"&gt;ML&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;The aim of this project is to classify dominant tree species across Germany by leveraging satellite image time series. Forest management
+practices benefit from knowledge of species distribution, which supports site-adapted tree selection and climate-resilient forest
+planning. Tree species labels in the TreeSatAI dataset are organised hierarchically (leaf type, genus, species), allowing us to develop
+classification methods that exploit this structure to improve model performance.&lt;/p&gt;</description></item><item><title>Harvesting the Sun: Dyson Swarm Animation</title><link>https://xmruuu.github.io/work/12_sose25_interactive-visualization/</link><pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/12_sose25_interactive-visualization/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 Interactive Visualization Course Work&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Architectural Informatics, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr.-Ing. Frank Petzold, Dr.-Ing. Gerhard Schubert, M.A. Lars Wüstemann&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Li Zhou, Kit-Lung Chan, Mathias Gunnarshaug, Ömer Faruk Secim&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/blender/"&gt;Blender&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/animation/"&gt;Animation&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This course was carried out in collaboration with &lt;a href="https://xrhub-bavaria.de/"&gt;XR HUB Bavaria&lt;/a&gt;, focusing on the production of an animation themed around &lt;strong&gt;future energy&lt;/strong&gt;. The final work was showcased in the dome theater at &lt;a href="https://www.1e9.community/festival-der-zukunft/2025/deutsch"&gt;1E9 &amp;amp; Festival der Zukunft&lt;/a&gt;. Our team selected the &lt;strong&gt;Dyson Swarm&lt;/strong&gt; as the central concept, and most of the modeling was accomplished using &lt;strong&gt;Blender&lt;/strong&gt;, where we made extensive use of parametric node systems to generate environments and handle complex geometries. Producing an animation tailored for a spherical dome theater was a unique challenge, and we are proud to have successfully completed it and received applause from the audience at the conclusion of the event.&lt;/p&gt;</description></item><item><title>Modeling of Scheduling in Engineering Project</title><link>https://xmruuu.github.io/work/11_sose25_project-management/</link><pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/11_sose25_project-management/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 System-Theoretical Principles of Project Management Course Research&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Construction Process Management | Professorship of Real Estate Development, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Univ.-Prof. Dr.-Ing. Konrad Nübel, Dr. rer. nat. Wolfgang Eber&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Pei-Ling Song, Hongyu Jiang&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/simulation/"&gt;Simulation&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/pm/"&gt;PM&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/theoretical/"&gt;Theoretical&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This experimental report is part of the System-Theoretical Principles of Project Management course, focusing on how system-theoretical methods can be applied to analyze project scheduling and verify the impact of different strategies on project duration and resource allocation. We began by modeling project activities as a causal network and conducting scheduling analysis to identify the critical path and overall project duration, which served as the baseline for subsequent scenario comparisons. We then designed and compared three different scheduling strategies to examine how variations in resource allocation influence project duration and constrained conditions. Finally, we simulated different scheduling flexibility settings by adjusting the strength of boundary conditions to observe the effects of task concentration versus dispersion, thereby exploring their impact on project stability and efficiency.&lt;/p&gt;</description></item><item><title>Building Information Modeling Pratice</title><link>https://xmruuu.github.io/work/10_sose25_bim-fundamental/</link><pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/10_sose25_bim-fundamental/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 BIM Fundamental Course Project&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Computing in Civil and Building Engineering, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr.-Ing. André Borrmann, Prof. Dr.-Ing. Sebastian Esser&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Personal Work&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/bim/"&gt;BIM&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/architecture/"&gt;Architecture&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This project was part of the &lt;strong&gt;SS25 BIM Fundamental Course&lt;/strong&gt;, aimed at developing a deeper understanding of the potential of &lt;strong&gt;Building Information Modeling (BIM)&lt;/strong&gt; and the structure of the &lt;strong&gt;IFC schema&lt;/strong&gt;. The assignment required us to create a semantically enriched and detailed BIM model, acting simultaneously as designers and engineers. We carefully examined the structure, appearance, and material definitions of the model, ensuring semantic accuracy and consistency throughout. This process not only strengthened our modeling skills but also provided us with a solid foundation in comprehending the logic and framework of IFC-based data representation.&lt;/p&gt;</description></item><item><title>Constraints Design in Timber Modular Process</title><link>https://xmruuu.github.io/work/09_wise24_fast-track-design-method/</link><pubDate>Sat, 09 Nov 2024 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/09_wise24_fast-track-design-method/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;24&amp;#39; AEC Hackathon Munich&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; &lt;a href='https://hackaec.com/events.html' target='_blank' rel='noopener'&gt;AEC HACKATHON&lt;/a&gt; &amp; &lt;a href='https://www.tum-venture-labs.de/labs/built-environment/' target='_blank' rel='noopener'&gt;TUM Venture Lab Built Environment&lt;/a&gt;&lt;/p&gt;
+ 
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Wanlin Zhang, and Pei-Ling Song, in collaboration with &lt;a href='https://www.dreso.com/de/' target='_blank' rel='noopener'&gt;Drees &amp; Sommer&lt;/a&gt;&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/hackathon/"&gt;Hackathon&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/bim/"&gt;BIM&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/add-in/"&gt;Add-in&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/dev/"&gt;Dev&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This project explores communication challenges in the &lt;strong&gt;timber modular prefabrication design process&lt;/strong&gt;, building upon solutions developed during the &lt;strong&gt;2024 AEC Hackathon Munich&lt;/strong&gt;. To address coordination issues among stakeholders in design and construction, we introduce a &lt;strong&gt;Constraint Design (CD)&lt;/strong&gt; approach, which employs abstract bounding-box models to represent constraints and exchange data via the &lt;strong&gt;Speckle platform&lt;/strong&gt;. A custom &lt;strong&gt;Revit plugin&lt;/strong&gt; was developed to provide real-time visualization of manufacturing constraints and to facilitate collaboration between design and production teams. By incorporating constraints in the early design phases, the system minimizes redesign iterations and improves overall efficiency. Furthermore, the study highlights future directions in information transmission and process automation, contributing to the broader digital transformation of the Architecture, Engineering, and Construction (AEC) industry. This approach demonstrates how integrated digital solutions can effectively address complex coordination challenges in construction practices.&lt;/p&gt;</description></item></channel></rss>

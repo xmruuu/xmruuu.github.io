@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ML on HSIEH MENG JU</title><link>https://xmruuu.github.io/tags/ml/</link><description>Recent content in ML on HSIEH MENG JU</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 12 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xmruuu.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml"/><item><title>Esemble Learning for IFC Feature Prediction</title><link>https://xmruuu.github.io/work/16_sose25_software_lab/</link><pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/16_sose25_software_lab/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;2025 Software Lab - IFC model analysis to gain insights into design processes &lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Computing in Civil and Building Engineering, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr.-Ing. Sebastian Esser, Dr. Zijian Wang, Dr. Matthias Weise (AEC3)&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Tan-An Ha, Kai Dietmair&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ml/"&gt;ML&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Analyzing IFC models provides valuable insights into design processes and supports the development of intelligent model evaluation frameworks. We employ &lt;strong&gt;IfcOpenShell&lt;/strong&gt; to extract &lt;strong&gt;geometric&lt;/strong&gt;, &lt;strong&gt;attribute&lt;/strong&gt;, &lt;strong&gt;topological&lt;/strong&gt;, and &lt;strong&gt;relational features&lt;/strong&gt; from IFC data. Building on the original scope of IFC model analysis, our study constructs a dataset of more than 300 IFC models, which are used to train and evaluate predictive frameworks. We focus on selected attributes (e.g., &lt;strong&gt;U-Value&lt;/strong&gt;, &lt;strong&gt;FireRating&lt;/strong&gt;, &lt;strong&gt;IsExternal&lt;/strong&gt;) and compare prediction tasks across different value types (&lt;strong&gt;Boolean&lt;/strong&gt;, &lt;strong&gt;numeric&lt;/strong&gt;, &lt;strong&gt;categorical&lt;/strong&gt;). To achieve robust performance, we adopt an ensemble learning strategy that integrates &lt;strong&gt;rule-based systems&lt;/strong&gt;, &lt;strong&gt;traditional machine learning&lt;/strong&gt;, and &lt;strong&gt;deep learning&lt;/strong&gt; models. This multi-model approach enables us to assess model-specific strengths, improve semantic inference of IFC attributes, and establish a comprehensive evaluation of prediction accuracy across heterogeneous property types.&lt;/p&gt;</description></item><item><title>Multi-Model Comparison for Tree Species Classification in Germany</title><link>https://xmruuu.github.io/work/13_sose25_ds-in-earth-observation/</link><pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/13_sose25_ds-in-earth-observation/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 Data Science in Earth Observation Project Report&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Data Science in Earth Observation, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr. Xiaoxiang Zhu, Dr. Muhammad Shahzad, Dr. Andrés Camero Unzueta&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Pei-Ling Song, Hongyu Jiang, Hoi-Wang Lo, Kit-Lung Chan&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/research/"&gt;Research&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ml/"&gt;ML&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;The aim of this project is to classify dominant tree species across Germany by leveraging satellite image time series. Forest management
+practices benefit from knowledge of species distribution, which supports site-adapted tree selection and climate-resilient forest
+planning. Tree species labels in the TreeSatAI dataset are organised hierarchically (leaf type, genus, species), allowing us to develop
+classification methods that exploit this structure to improve model performance.&lt;/p&gt;</description></item></channel></rss>

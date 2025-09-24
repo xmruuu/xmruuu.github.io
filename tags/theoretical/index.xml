@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Theoretical on HSIEH MENG JU</title><link>https://xmruuu.github.io/tags/theoretical/</link><description>Recent content in Theoretical on HSIEH MENG JU</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 28 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xmruuu.github.io/tags/theoretical/index.xml" rel="self" type="application/rss+xml"/><item><title>Modeling of Scheduling in Engineering Project</title><link>https://xmruuu.github.io/work/11_sose25_project-management/</link><pubDate>Sat, 28 Jun 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/11_sose25_project-management/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 System-Theoretical Principles of Project Management Course Research&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Construction Process Management | Professorship of Real Estate Development, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Univ.-Prof. Dr.-Ing. Konrad Nübel, Dr. rer. nat. Wolfgang Eber&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Pei-Ling Song, Hongyu Jiang&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/simulation/"&gt;Simulation&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/pm/"&gt;PM&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/theoretical/"&gt;Theoretical&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This experimental report is part of the System-Theoretical Principles of Project Management course, focusing on how system-theoretical methods can be applied to analyze project scheduling and verify the impact of different strategies on project duration and resource allocation. We began by modeling project activities as a causal network and conducting scheduling analysis to identify the critical path and overall project duration, which served as the baseline for subsequent scenario comparisons. We then designed and compared three different scheduling strategies to examine how variations in resource allocation influence project duration and constrained conditions. Finally, we simulated different scheduling flexibility settings by adjusting the strength of boundary conditions to observe the effects of task concentration versus dispersion, thereby exploring their impact on project stability and efficiency.&lt;/p&gt;</description></item></channel></rss>

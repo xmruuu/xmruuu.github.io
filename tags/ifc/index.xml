@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IFC on HSIEH MENG JU</title><link>https://xmruuu.github.io/tags/ifc/</link><description>Recent content in IFC on HSIEH MENG JU</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xmruuu.github.io/tags/ifc/index.xml" rel="self" type="application/rss+xml"/><item><title>IFC to Graph Structure Semantic Modeling</title><link>https://xmruuu.github.io/work/15_sose25_semantic-modeling/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/15_sose25_semantic-modeling/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;The first step in building the extensible analytics framework&lt;/h2&gt;
+ 
+ 
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Personal Research&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/research/"&gt;Research&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;I developed a complete &lt;strong&gt;IFC-to-graph structure pipeline&lt;/strong&gt;, leveraging &lt;strong&gt;IfcOpenShell&lt;/strong&gt; for data extraction and &lt;strong&gt;D3.js&lt;/strong&gt; for visualization. The system unfolds each hierarchical level of an IFC model and maps its attributes and values into an &lt;strong&gt;interactive graph&lt;/strong&gt;, enabling intuitive exploration of complex building projects. This represents the first step toward decomposing and understanding architectural data. Future plans include integrating &lt;strong&gt;LLMs (e.g., LangGraph)&lt;/strong&gt; for semantic interpretation and extending the framework to support refined analyses of physical environments, structural properties, and topological relationships. Establishing &lt;strong&gt;semantic modeling&lt;/strong&gt; as the foundation is essential for enabling computers and machines to read building information clearly and accurately, I am continuously exploring.&lt;/p&gt;</description></item><item><title>Esemble Learning for IFC Feature Prediction</title><link>https://xmruuu.github.io/work/16_sose25_software_lab/</link><pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/16_sose25_software_lab/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;2025 Software Lab - IFC model analysis to gain insights into design processes &lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Computing in Civil and Building Engineering, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr.-Ing. Sebastian Esser, Dr. Zijian Wang, Dr. Matthias Weise (AEC3)&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Meng-Ju Hsieh, Tan-An Ha, Kai Dietmair&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/data-science/"&gt;Data Science&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ml/"&gt;ML&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Analyzing IFC models provides valuable insights into design processes and supports the development of intelligent model evaluation frameworks. We employ &lt;strong&gt;IfcOpenShell&lt;/strong&gt; to extract &lt;strong&gt;geometric&lt;/strong&gt;, &lt;strong&gt;attribute&lt;/strong&gt;, &lt;strong&gt;topological&lt;/strong&gt;, and &lt;strong&gt;relational features&lt;/strong&gt; from IFC data. Building on the original scope of IFC model analysis, our study constructs a dataset of more than 300 IFC models, which are used to train and evaluate predictive frameworks. We focus on selected attributes (e.g., &lt;strong&gt;U-Value&lt;/strong&gt;, &lt;strong&gt;FireRating&lt;/strong&gt;, &lt;strong&gt;IsExternal&lt;/strong&gt;) and compare prediction tasks across different value types (&lt;strong&gt;Boolean&lt;/strong&gt;, &lt;strong&gt;numeric&lt;/strong&gt;, &lt;strong&gt;categorical&lt;/strong&gt;). To achieve robust performance, we adopt an ensemble learning strategy that integrates &lt;strong&gt;rule-based systems&lt;/strong&gt;, &lt;strong&gt;traditional machine learning&lt;/strong&gt;, and &lt;strong&gt;deep learning&lt;/strong&gt; models. This multi-model approach enables us to assess model-specific strengths, improve semantic inference of IFC attributes, and establish a comprehensive evaluation of prediction accuracy across heterogeneous property types.&lt;/p&gt;</description></item><item><title>Building Information Modeling Pratice</title><link>https://xmruuu.github.io/work/10_sose25_bim-fundamental/</link><pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate><guid>https://xmruuu.github.io/work/10_sose25_bim-fundamental/</guid><description>&lt;div class="mt-1 mb-4"&gt;
+ &lt;h2 class="mt-1 mb-2 text-xl font-semibold"&gt;SS25 BIM Fundamental Course Project&lt;/h2&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Affiliation:&lt;/strong&gt; Chair of Computing in Civil and Building Engineering, School of Engineering and Design, TUM&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Supervised by:&lt;/strong&gt; Prof. Dr.-Ing. André Borrmann, Prof. Dr.-Ing. Sebastian Esser&lt;/p&gt;
+ &lt;p class="m-0"&gt;&lt;strong&gt;Credits:&lt;/strong&gt; Personal Work&lt;/p&gt;
+ 
+ &lt;div class="mt-2 flex flex-wrap gap-2"&gt;
+ &lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/project/"&gt;Project&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/bim/"&gt;BIM&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/architecture/"&gt;Architecture&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/ifc/"&gt;IFC&lt;/a&gt;&lt;a class="tag-badge text-sm no-underline" href="https://xmruuu.github.io/tags/munich-germany/"&gt;Munich, Germany&lt;/a&gt;
+ &lt;/div&gt;
+ 
+&lt;/div&gt;
+
+
+&lt;h3 id="introduction"&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This project was part of the &lt;strong&gt;SS25 BIM Fundamental Course&lt;/strong&gt;, aimed at developing a deeper understanding of the potential of &lt;strong&gt;Building Information Modeling (BIM)&lt;/strong&gt; and the structure of the &lt;strong&gt;IFC schema&lt;/strong&gt;. The assignment required us to create a semantically enriched and detailed BIM model, acting simultaneously as designers and engineers. We carefully examined the structure, appearance, and material definitions of the model, ensuring semantic accuracy and consistency throughout. This process not only strengthened our modeling skills but also provided us with a solid foundation in comprehending the logic and framework of IFC-based data representation.&lt;/p&gt;</description></item></channel></rss>
