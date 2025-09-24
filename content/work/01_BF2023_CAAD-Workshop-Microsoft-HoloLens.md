@@ -13,4 +13,4 @@ Participants will engage in interactive exercises, experiencing firsthand how VR
 
 This workshop is an exciting opportunity to understand and experience the future of VR in design and construction, leaving participants inspired to integrate these innovative solutions in their professional practices.
 
-![image](/img/works/01_BF2023_CAAD-Workshop-Microsoft-HoloLens/event.webp)
+![image](/img/works/01_BF2023_CAAD-Workshop-Microsoft-HoloLens/hololens_event.webp)
