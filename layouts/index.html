@@ -200,9 +200,9 @@
       {{ with site.GetPage "section" "work" }}
         {{ if gt (len .Pages) 0 }}
           {{ range .Pages.ByDate.Reverse }}
-            <a href="{{ .RelPermalink }}" class="group block rounded-lg overflow-visible transition-transform duration-300 hover:-translate-y-1 bg-transparent flex flex-row md:flex-col h-[120px] md:h-full">
+            <a href="{{ .RelPermalink }}" class="group block rounded-lg overflow-visible transition-transform duration-300 hover:-translate-y-1 bg-transparent flex flex-row md:flex-col h-[120px] md:h-full" style="will-change: transform;">
               <div class="relative shrink-0 w-[120px] h-[120px] md:w-full md:h-auto md:pb-[100%]">
-                <img class="absolute inset-0 w-full h-full {{ if eq .Params.coverFit "contain" }}object-contain bg-white p-1{{ else }}object-cover{{ end }}" src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ "img/works/aec_hackathon_1.png" | relURL }}{{ end }}" alt="{{ .Title }}">
+                <img class="absolute inset-0 w-full h-full {{ if eq .Params.coverFit "contain" }}object-contain bg-white p-1{{ else }}object-cover{{ end }}" src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ "img/works/aec_hackathon_1.png" | relURL }}{{ end }}" alt="{{ .Title }}" loading="lazy" decoding="async" style="will-change: transform; backface-visibility: hidden; transform: translateZ(0);" width="800" height="800">
               </div>
               <div class="flex flex-col flex-1 px-3 py-2 md:px-4 md:py-4 md:w-full">
                 <h3 class="text-[0.95rem] md:text-[1.1rem] m-0 text-[#333] mb-1 md:mb-3 text-left card-title-2clamp">{{ .Title }}</h3>
