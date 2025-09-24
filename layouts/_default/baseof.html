@@ -63,7 +63,7 @@
     
 
     
-    .custom-cursor.hover { transform: scale(1.15); }
+    .custom-cursor.hover { transform: scale(1.25); }
     
     .custom-cursor.click { transform: none; }
 
@@ -145,7 +145,7 @@
       rafPending = false;
       // Position via transform to avoid layout thrash
       const baseScale = 1;
-      const scale = state.clickable ? 1.15 : baseScale;
+      const scale = state.clickable ? 1.25 : baseScale;
       cursor.style.transform = `translate3d(${mouseX - 8}px, ${mouseY - 8}px, 0) scale(${scale})`;
 
       // Arrow mode only in bottom 20% and allowed sections
