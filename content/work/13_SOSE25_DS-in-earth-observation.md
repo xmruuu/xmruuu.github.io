@@ -3,7 +3,7 @@ title: "Multi-Model Comparison for Tree Species Classification in Germany"
 date: 2025-07-02
 description: "Project of Data Science in Earth Observation, evaluating five models for tree species classification."
 tags: ["Research", "Data Science", "ML", "Munich, Germany"]
-image: "img/works/13_SOSE25_DS-in-earth-observation/cover.png"
+image: "img/works/13_SOSE25_DS-in-earth-observation/cover.webp"
 coverFit: "contain"
 ---
 

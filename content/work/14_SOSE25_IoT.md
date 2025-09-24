@@ -25,11 +25,11 @@ This project delivers a low‑cost indoor monitoring pipeline. Seeeduino LoRaWAN
 ### System Framework
 The system architecture is divided into hardware and software components. On the hardware side, multiple indoor environmental sensors (measuring CO, PM2.5, temperature, humidity, etc.) transmit data via LoRa using the CayenneLPP encoding format through a LoRaWAN gateway to IoT cloud platforms such as TTN and SWM. On the software side, these platforms forward the data to the FROST Server via the standardized SensorThings API, where it is stored in MongoDB. Meanwhile, the semantic building model of TUM in CityGML LOD 3.0 is processed with FME and converted into Cesium-compatible 3D Tiles. Finally, JavaScript is used to fetch live or historical data from the FROST Server and MongoDB, integrating it into Cesium 3D visualizations and interactive dashboards for end-user applications.
 
-{{< figure src="/img/works/14_SOSE25_IoT/Architecture.png" alt="System Architecture" caption="Figure 1. System Architecture" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
+{{< figure src="/img/works/14_SOSE25_IoT/Architecture.webp" alt="System Architecture" caption="Figure 1. System Architecture" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
 
 ### Sensor Architecture
 
-{{< figure src="/img/works/14_SOSE25_IoT/sensors.png" alt="Sensors" caption="Figure 2. Sensor Architecture" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
+{{< figure src="/img/works/14_SOSE25_IoT/sensors.webp" alt="Sensors" caption="Figure 2. Sensor Architecture" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
 
 **Required hardware:**
 - Mainboard — 1× [Seeeduino LoRaWAN](https://wiki.seeedstudio.com/Seeeduino_LoRAWAN/)
@@ -39,17 +39,17 @@ The system architecture is divided into hardware and software components. On the
 - CO, NO₂, C2H5CH and VOC — [Multichannel Gas Sensor V2](https://wiki.seeedstudio.com/Grove-Multichannel-Gas-Sensor-V2/)
 
 ### Deployment
-{{< figure src="/img/works/14_SOSE25_IoT/deploy.png" alt="Box Process" caption="Figure 3. Equipment" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
+{{< figure src="/img/works/14_SOSE25_IoT/deploy.webp" alt="Box Process" caption="Figure 3. Equipment" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
 
 In order to protect the system and its sensors, we designed a 3D equipment box and fabricated it using 3D printing. The system was deployed in the BIM Lab (Room 4170) and operated for one week of data collection (10–17 July).
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-2">
   <figure class="m-0">
-    <img src="/img/works/14_SOSE25_IoT/bim_lab2.png" alt="BIM Lab (Room 4170)" style="width:100%;height:auto;">
+    <img src="/img/works/14_SOSE25_IoT/bim_lab2.webp" alt="BIM Lab (Room 4170)" style="width:100%;height:auto;">
     <figcaption>Figure 4. Deployment</figcaption>
   </figure>
   <figure class="m-0">
-    <img src="/img/works/14_SOSE25_IoT/bim_lab1.png" alt="Our Sensor System in BIM Lab" style="width:100%;height:auto;">
+    <img src="/img/works/14_SOSE25_IoT/bim_lab1.webp" alt="Our Sensor System in BIM Lab" style="width:100%;height:auto;">
     <figcaption>Figure 5. BIM Lab (Room 4170)</figcaption>
   </figure>
 </div>
@@ -57,9 +57,9 @@ In order to protect the system and its sensors, we designed a 3D equipment box a
 ### Validation
 The dashboard aggregates a Cesium 3D context with time‑series charts and a comfort index, enabling spatiotemporal exploration of indoor conditions. Validation shows the system captures real‑world dynamics. A rain event on 16.07 aligns with a temperature drop and humidity spike; on 11–12.07, CO/NO₂ rise with occupancy/ventilation.
 
-{{< figure src="/img/works/14_SOSE25_IoT/validation1.png" alt="Rain Event" caption="Figure 6. Rain event – temperature drop and humidity spike (UTC)" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
+{{< figure src="/img/works/14_SOSE25_IoT/validation1.webp" alt="Rain Event" caption="Figure 6. Rain event – temperature drop and humidity spike (UTC)" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
 
-{{< figure src="/img/works/14_SOSE25_IoT/validation2.png" alt="Occupancy Gas" caption="Figure 7. Occupancy/ventilation – CO and NO₂ increase (UTC)" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
+{{< figure src="/img/works/14_SOSE25_IoT/validation2.webp" alt="Occupancy Gas" caption="Figure 7. Occupancy/ventilation – CO and NO₂ increase (UTC)" class="mx-auto w-full md:w-4/5 lg:w-2/3" >}}
 
 ### Conclusion
 Current limits are a single node and sparse activity records. The present system already delivers LoRaWAN monitoring with a FROST + Cesium analytics pipeline for spatiotemporal visualization. Next steps are refined placement, multi‑room switching, and door/window or occupancy signals, then evaluating control actions (smart glass/ventilation) with proper response timing.

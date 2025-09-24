@@ -14,7 +14,7 @@ This workshop introduces the role of digital technology in contemporary architec
     <figcaption>RhinoVAULT Application</figcaption>
   </figure>
   <figure class="m-0">
-    <img src="/img/works/01_BF2023_CAAD-Workshop-RhinoVAULT-Application/IMG_7624.gif" alt="RhinoVAULT Application Process" style="width:100%;height:300px;object-fit:cover;">
+    <img src="/img/works/01_BF2023_CAAD-Workshop-RhinoVAULT-Application/IMG_7624.webp" alt="RhinoVAULT Application Process" style="width:100%;height:300px;object-fit:cover;">
     <figcaption>Vibrating Knife & CNC Machine</figcaption>
   </figure>
 </div>

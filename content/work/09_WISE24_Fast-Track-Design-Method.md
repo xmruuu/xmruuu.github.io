@@ -24,11 +24,11 @@ Designers and manufacturers collaborate in real time through the Speckle platfor
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
   <figure class="m-0">
-    <img src="/img/works/09_WISE24_Fast-Track-Design-Method/1.jpg" alt="The formation process of the original model through mesh analysis" style="width:100%;height:300px;object-fit:cover;">
+    <img src="/img/works/09_WISE24_Fast-Track-Design-Method/1.webp" alt="The formation process of the original model through mesh analysis" style="width:100%;height:300px;object-fit:cover;">
     <figcaption>The formation process of the original model through mesh analysis</figcaption>
   </figure>
   <figure class="m-0">
-    <img src="/img/works/09_WISE24_Fast-Track-Design-Method/2.jpg" alt="The collaboration process between the manufacturer and the designer" style="width:100%;height:300px;object-fit:contain;background-color:white;">
+    <img src="/img/works/09_WISE24_Fast-Track-Design-Method/2.webp" alt="The collaboration process between the manufacturer and the designer" style="width:100%;height:300px;object-fit:contain;background-color:white;">
     <figcaption>The collaboration process between the manufacturer and the designer</figcaption>
   </figure>
 </div>
@@ -36,9 +36,9 @@ Designers and manufacturers collaborate in real time through the Speckle platfor
 ### Revit Plugin Prototype
 A Python-based plugin built on pyRevit was developed to support bounding box conversion and synchronization. The plugin provides pushbutton functions for transforming design entities into abstract bounding boxes, transmitting them via Speckle, and retrieving constraint-modified versions back into Revit. Furthermore, it enables visualization of constraint relationships, allowing designers to validate and adjust parameters in response to stakeholder input, demonstrating the feasibility of constraint design as a practical tool.
 
-{{< figure src="/img/works/09_WISE24_Fast-Track-Design-Method/3.jpg" alt="Successful display of the constraint visualization system" caption="Successful display of the constraint visualization system" class="mx-auto w-full" >}}
+{{< figure src="/img/works/09_WISE24_Fast-Track-Design-Method/3.webp" alt="Successful display of the constraint visualization system" caption="Successful display of the constraint visualization system" class="mx-auto w-full" >}}
 
 ### Conclusion
 In summary, Constraint Design serves as an intermediary abstraction layer between design and manufacturing. By integrating bounding boxes with the collaborative infrastructure of Speckle, this approach enhances coordination efficiency, reduces rework, and fosters more transparent communication across stakeholders. Looking forward, the framework holds potential to integrate real-time visualization, process automation, and machine learning, paving the way for greater digitalization and intelligence in the AEC industry.
 
-{{< figure src="/img/works/09_WISE24_Fast-Track-Design-Method/group_pic.jpg" alt="Group picture from AEC Hackathon Munich" caption="Group picture from AEC Hackathon Munich" class="mx-auto w-full" >}}
+{{< figure src="/img/works/09_WISE24_Fast-Track-Design-Method/group_pic.webp" alt="Group picture from AEC Hackathon Munich" caption="Group picture from AEC Hackathon Munich" class="mx-auto w-full" >}}

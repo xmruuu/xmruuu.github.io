@@ -11,4 +11,4 @@ In the “KUKA Robotic Arm Workshop,” participants will learn to set up and op
 
 A key feature of the session is a hands-on exercise in robotic weaving, showcasing the arm’s precision and potential in digital manufacturing and design. This concise yet comprehensive workshop is an ideal introduction to the possibilities of robotic automation in creative and industrial applications.
 
-![image](img/works/01_BF2023_CAAD-Workshop-KUKA-Robotic-Arm-Workshop/cover.gif)
+![image](img/works/01_BF2023_CAAD-Workshop-KUKA-Robotic-Arm-Workshop/cover.webp)
