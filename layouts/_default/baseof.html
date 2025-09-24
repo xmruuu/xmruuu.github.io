@@ -99,6 +99,9 @@
       background: #f0f0f0;
       border-radius: 9999px; /* rounded-2xl */
     }
+    /* Global GPU/compositing hints for smooth hover/scroll on cards */
+    #works a { will-change: transform; }
+    #works img { backface-visibility: hidden; transform: translateZ(0); }
     /* Typography handled by Tailwind Typography plugin via CDN */
   </style>
   {{- partial "head.html" . -}}

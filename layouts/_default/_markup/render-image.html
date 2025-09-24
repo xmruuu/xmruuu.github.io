@@ -4,25 +4,7 @@
    - "h-300" → height:300px
    - "w-480 h-300" → both
 */}}
-{{- $raw := .Destination -}}
-{{- $encoded := replace $raw " " "%20" -}}
-{{- $src := $encoded | relURL -}}
+{{- $src := .Destination | safeURL -}}
+{{- $alt := .Text | default "" -}}
 {{- $title := .Title | default "" -}}
-{{- $wMatch := findRE `\bw-(\d+)\b` $title -}}
-{{- $hMatch := findRE `\bh-(\d+)\b` $title -}}
-{{- $styleParts := slice -}}
-{{- if gt (len $wMatch) 0 -}}
-  {{- $wToken := index $wMatch 0 -}}
-  {{- $wVal := replace $wToken "w-" "" -}}
-  {{- $styleParts = $styleParts | append (printf "width:%spx" $wVal) -}}
-{{- end -}}
-{{- if gt (len $hMatch) 0 -}}
-  {{- $hToken := index $hMatch 0 -}}
-  {{- $hVal := replace $hToken "h-" "" -}}
-  {{- $styleParts = $styleParts | append (printf "height:%spx" $hVal) -}}
-{{- end -}}
-{{- $style := "" -}}
-{{- if gt (len $styleParts) 0 -}}
-  {{- $style = delimit $styleParts "; " -}}
-{{- end -}}
-<img src="{{ $src }}" alt="{{ .Text }}" {{ with .Title }}title="{{ . }}"{{ end }} class="max-w-full h-auto cursor-pointer hover:opacity-90 transition-opacity" loading="lazy" {{ if $style }}style="{{ $style }}"{{ end }} onclick="openLightbox('{{ $src }}', '{{ .Text }}')">
+<img src="{{ $src }}" alt="{{ $alt }}" title="{{ $title }}" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
