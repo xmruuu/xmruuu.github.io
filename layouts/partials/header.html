@@ -1,6 +1,8 @@
 <nav class="fixed top-0 left-0 w-full bg-white z-[1000]">
   <div class="max-w-[1200px] mx-auto px-8 py-6 flex items-center justify-between">
-    <a class="flex items-center justify-center relative w-[45px] h-[45px] rounded-full bg-black text-white transition-transform duration-300 hover:scale-110" href="{{ .Site.BaseURL }}">HMJ</a>
+    <a class="flex items-center justify-center relative w-[45px] h-[45px] transition-transform duration-300 hover:scale-110" href="{{ .Site.BaseURL }}" aria-label="Home">
+      <img src="/img/web_logo.svg" alt="HSIEH MENG JU" class="w-[45px] h-[45px] object-contain" />
+    </a>
     <button id="nav-toggle" class="md:hidden p-2" aria-label="Toggle navigation">
       <span class="block w-6 h-0.5 bg-black mb-1"></span>
       <span class="block w-6 h-0.5 bg-black mb-1"></span>
