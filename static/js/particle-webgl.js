@@ -9,8 +9,10 @@
   if (!gl) return;
 
   const ua = navigator.userAgent || '';
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
-  const isSmall = typeof window !== 'undefined' ? window.innerWidth < 1000 : false;
+  // Treat only handheld/touch tablets as "mobile" for big particles; resizing desktop windows won't switch
+  const isTouchDevice = matchMedia('(hover: none), (pointer: coarse)').matches;
+  const isMobileUA = /iPhone|iPad|iPod|Android/i.test(ua);
+  const isMobile = isTouchDevice && isMobileUA;
 
   // Fixed logical canvas + DPR backbuffer scaling
   const LOGICAL_SIZE = 1000;
@@ -22,8 +24,8 @@
   const config = {
     particleCount: 6000,
     textArray: ["AEC Informatics"],        // single phrase only
-    ptlGap: (isMobile || isSmall) ? 3 : 2,  // raster sampling step
-    ptlSize: (isMobile || isSmall) ? 3 : 1, // point size
+    ptlGap: (isMobile) ? 3 : 2,  // raster sampling step
+    ptlSize: (isMobile) ? 3 : 1, // point size
     restless: true,                         // subtle idle motion
     color: '#000000',                       // monochrome black per design
     mouseRadius: 0.5,
