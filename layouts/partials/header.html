@@ -1,0 +1,42 @@
+<nav class="fixed top-0 left-0 w-full bg-white z-[1000]">
+  <div class="max-w-[1200px] mx-auto px-8 py-6 flex items-center justify-between">
+    <a class="flex items-center justify-center relative w-[45px] h-[45px] rounded-full bg-black text-white transition-transform duration-300 hover:scale-110" href="{{ .Site.BaseURL }}">HMJ</a>
+    <button id="nav-toggle" class="md:hidden p-2" aria-label="Toggle navigation">
+      <span class="block w-6 h-0.5 bg-black mb-1"></span>
+      <span class="block w-6 h-0.5 bg-black mb-1"></span>
+      <span class="block w-6 h-0.5 bg-black"></span>
+    </button>
+    <div id="navbarNav" class="hidden md:block">
+      <ul class="flex gap-4 items-center">
+        <li><a class="relative text-black after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-[width] after:duration-300" href="{{ if .IsHome }}#about{{ else }}{{ "/#about" | relURL }}{{ end }}">About</a></li>
+        <li><a class="relative text-black after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-[width] after:duration-300" href="{{ if .IsHome }}#experience{{ else }}{{ "/#experience" | relURL }}{{ end }}">Experience</a></li>
+        <li><a class="relative text-black after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-[width] after:duration-300" href="{{ if .IsHome }}#works{{ else }}{{ "/#works" | relURL }}{{ end }}">Work &amp; Research</a></li>
+        <li><a class="relative text-black after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-[width] after:duration-300" href="{{ "/blog/" | relURL }}">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="mobileNav" class="hidden md:hidden w-full bg-white border-t">
+    <ul class="flex flex-col items-center gap-4 py-6">
+      <li><a class="text-black" href="{{ if .IsHome }}#about{{ else }}{{ "/#about" | relURL }}{{ end }}">About</a></li>
+      <li><a class="text-black" href="{{ if .IsHome }}#experience{{ else }}{{ "/#experience" | relURL }}{{ end }}">Experience</a></li>
+      <li><a class="text-black" href="{{ if .IsHome }}#works{{ else }}{{ "/#works" | relURL }}{{ end }}">Work &amp; Research</a></li>
+      <li><a class="text-black" href="{{ "/blog/" | relURL }}">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.getElementById('nav-toggle');
+  const mobileNav = document.getElementById('mobileNav');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      if (mobileNav.classList.contains('hidden')) {
+        mobileNav.classList.remove('hidden');
+      } else {
+        mobileNav.classList.add('hidden');
+      }
+    });
+  }
+</script>
+
+

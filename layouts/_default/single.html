@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="mx-auto max-w-3xl px-4 py-10 prose prose-neutral" style="text-align: justify; text-justify: inter-word;">
+  {{ if not .Params.hideTitle }}
+    <h1 class="text-left">{{ .Title }}</h1>
+  {{ end }}
+  {{ if .Params.toc }}<nav class="mb-6">{{ .TableOfContents }}</nav>{{ end }}
+  {{ $content := .Content }}
+  {{ if .Params.image }}
+    {{ $coverImage := .Params.image }}
+    {{ $content = $content | replaceRE `!\[cover\]\([^)]+\)` "" }}
+    {{ $content = $content | replaceRE `!\[image\]\([^)]*cover\.jpg[^)]*\)` "" }}
+  {{ end }}
+  {{ $content | safeHTML }}
+</article>
+{{ end }}
+
+

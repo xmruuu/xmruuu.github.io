@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <link rel="icon" href="img/avatar.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body{font-family:"Segoe UI","Microsoft JhengHei UI",system-ui,-apple-system,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif}
+    /* Global responsive typography: scales all rem-based text site-wide */
+    html{font-size:15px}
+    @media (min-width:640px){ html{font-size:16px} }
+    @media (min-width:1024px){ html{font-size:17px} }
+    
+    /* Custom text selection color */
+    ::selection {
+      background-color: #ffff00;
+      color: #000000;
+    }
+    
+    ::-moz-selection {
+      background-color: #ffff00;
+      color: #000000;
+    }
+    
+    /* Custom Cursor */
+    /* Hide custom cursor only on devices that support hover (desktop). Keep default cursor on touch. */
+    @media (hover: hover) and (pointer: fine) {
+      * { cursor: none !important; }
+    }
+    
+    .custom-cursor {
+      position: fixed;
+      width: 16px;
+      height: 16px;
+      background-color: #0600fe;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2147483647;
+      transition: transform 0.1s ease;
+    }
+    
+    .custom-cursor::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: #0600fe;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.2s ease;
+      pointer-events: none;
+    }
+    
+    .custom-cursor.hover::after {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+    
+    .custom-cursor.click::after {
+      transform: translate(-50%, -50%) scale(0.8);
+      background-color: #0600fe;
+    }
+    
+
+    
+    .custom-cursor.hover {
+      transform: scale(1.5);
+    }
+    
+    .custom-cursor.click {
+      transform: scale(0.8);
+    }
+
+    /* Text utilities for full justification and hyphenation */
+    .text-justify { text-align: justify; text-justify: inter-word; }
+    .hyphens-auto { hyphens: auto; }
+
+    /* Apply to all article paragraphs by default */
+    article.prose p { text-align: justify; text-justify: inter-word; hyphens: auto; }
+    article.prose figure { text-align: center; }
+    /* Let shortcode width/class control actual width; keep responsive cap */
+    article.prose figure img { display: block; margin-left: auto; margin-right: auto; height: auto; width: auto; max-width: 100%; }
+    article.prose figure figcaption, article.prose figure figcaption p { text-align: center; color: #6b7280; font-size: 0.9rem; margin-top: 0.25rem; margin-bottom: 0; }
+
+    /* Reusable utilities for Work cards (DRY inline styles) */
+    .card-title-2clamp {
+      min-height: 2.2em;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.15;
+    }
+    .card-desc-4clamp {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      line-height: 1.35;
+      max-height: 5.4em;
+    }
+    .tag-badge {
+      padding: 0.125rem 0.375rem; /* px-1.5 py-0.5 */
+      background: #f0f0f0;
+      border-radius: 9999px; /* rounded-2xl */
+    }
+    /* Typography handled by Tailwind Typography plugin via CDN */
+  </style>
+  {{- partial "head.html" . -}}
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  
+  {{ partial "header.html" . }}
+  <main class="flex-1 {{ if not .IsHome }}pt-24 md:pt-28{{ end }}">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-[2000] hidden flex items-center justify-center p-2">
+    <div class="relative w-full h-full flex items-center justify-center">
+      <button id="closeLightbox" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
+      <img id="lightboxImage" src="" alt="" class="max-w-none max-h-none w-auto h-auto object-contain" style="max-width: 95vw; max-height: 95vh;">
+    </div>
+  </div>
+
+  <script>
+    // Custom Cursor
+    const cursor = document.querySelector('.custom-cursor');
+    const isTouch = matchMedia('(hover: none), (pointer: coarse)').matches;
+    if (isTouch && cursor) {
+      cursor.style.display = 'none';
+    }
+    let isArrowMode = false;
+    let mouseX = 0, mouseY = 0;
+    
+    // Mouse move event
+    if (!isTouch) document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      const windowHeight = window.innerHeight;
+      const isInBottomArea = mouseY > windowHeight * 0.8; // Bottom 20% of screen
+      
+      // Check if hovering over clickable elements
+      const target = e.target;
+      const isClickable = target.tagName === 'A' || 
+                         target.tagName === 'BUTTON' || 
+                         target.classList.contains('clickable') ||
+                         target.closest('a') ||
+                         target.closest('button');
+      
+      if (isClickable) {
+        // Show circular cursor for clickable elements
+        cursor.style.display = 'block';
+        cursor.style.left = e.clientX - 8 + 'px';
+        cursor.style.top = e.clientY - 8 + 'px';
+        cursor.style.background = '#0600fe';
+        cursor.style.borderRadius = '50%';
+        isArrowMode = false;
+      } else if (isInBottomArea) {
+        // Only show arrow in allowed sections; never in footer or outside sections
+        const currentSection = target.closest('section');
+        const sectionId = currentSection ? currentSection.id : '';
+        const allowArrow = sectionId === 'hero' || sectionId === 'about' || sectionId === 'experience';
+        if (allowArrow) {
+          // Show arrow cursor in bottom area (except works section)
+          cursor.style.display = 'block';
+          cursor.style.left = e.clientX - 16 + 'px';
+          cursor.style.top = e.clientY - 16 + 'px';
+          cursor.style.background = 'transparent';
+          cursor.style.borderRadius = '0';
+          cursor.innerHTML = '﹀';
+          cursor.style.fontSize = '32px';
+          cursor.style.color = '#0600fe';
+          cursor.style.fontWeight = 'bold';
+          cursor.style.textAlign = 'center';
+          cursor.style.lineHeight = '32px';
+          isArrowMode = true;
+        } else {
+          // Show circular cursor in works section
+          cursor.style.display = 'block';
+          cursor.style.left = e.clientX - 8 + 'px';
+          cursor.style.top = e.clientY - 8 + 'px';
+          cursor.style.background = '#0600fe';
+          cursor.style.borderRadius = '50%';
+          cursor.innerHTML = '';
+          isArrowMode = false;
+        }
+      } else {
+        // Show circular cursor for normal areas
+        cursor.style.display = 'block';
+        cursor.style.left = e.clientX - 8 + 'px';
+        cursor.style.top = e.clientY - 8 + 'px';
+        cursor.style.background = '#0600fe';
+        cursor.style.borderRadius = '50%';
+        cursor.innerHTML = '';
+        isArrowMode = false;
+      }
+    });
+    
+    // Mouse click events
+    if (!isTouch) document.addEventListener('mousedown', () => {
+      if (isArrowMode) {
+        // Arrow click - scroll to next section and immediately switch to circular cursor
+        const currentSection = document.elementFromPoint(mouseX, mouseY)?.closest('section');
+        if (currentSection) {
+          const nextSection = currentSection.nextElementSibling;
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+        // Immediately switch to circular cursor
+        cursor.style.display = 'block';
+        cursor.style.left = mouseX - 8 + 'px';
+        cursor.style.top = mouseY - 8 + 'px';
+        cursor.style.background = '#0600fe';
+        cursor.style.borderRadius = '50%';
+        cursor.innerHTML = '';
+        isArrowMode = false;
+      } else {
+        cursor.classList.add('click');
+      }
+    });
+    
+    if (!isTouch) document.addEventListener('mouseup', () => {
+      cursor.classList.remove('click');
+    });
+    
+    // Hover effects for clickable elements
+    if (!isTouch) document.addEventListener('mouseover', (e) => {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.onclick) {
+        cursor.classList.add('hover');
+      }
+    });
+    
+    if (!isTouch) document.addEventListener('mouseout', (e) => {
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.onclick) {
+        cursor.classList.remove('hover');
+      }
+    });
+    
+    // Lightbox functions
+    function openLightbox(src, alt) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightbox.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close lightbox when clicking outside image or on close button
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this || e.target.id === 'closeLightbox') {
+        closeLightbox();
+      }
+    });
+    
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    // Scroll section click handler
+    // Disable section click-to-scroll on touch to avoid accidental jumps
+    const allowSectionClick = !isTouch;
+    if (allowSectionClick) {
+      document.querySelectorAll('.scroll-section').forEach(section => {
+        section.addEventListener('click', function() {
+          const nextSection = this.nextElementSibling;
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    }
+  </script>
+  <script>
+    // Enable lightbox only for content images (exclude homepage work cards)
+    document.addEventListener('click', function(e){
+      const img = e.target.closest('img');
+      if(!img) return;
+      // Ignore images inside the Works section (cards/covers)
+      if (img.closest('#works')) return;
+      // Ignore images explicitly marked as no-lightbox (e.g., skills)
+      if (img.classList.contains('no-lightbox') || img.closest('[data-no-lightbox]')) return;
+      // Only trigger for content images inside main, not icons/logos
+      if (img.closest('main')) {
+        const src = img.getAttribute('src');
+        if (src) {
+          openLightbox(src, img.getAttribute('alt') || '');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+

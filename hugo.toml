@@ -1,0 +1,39 @@
+baseURL = 'https://mj.hsieh.github.io/'
+title = 'HSIEH MENG JU'
+defaultContentLanguage = 'en'
+hasCJKLanguage = true
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+  recentCount = 3
+
+[taxonomies]
+  tag = 'tags'
+
+[menu]
+  [[menu.main]]
+    name = 'About'
+    url = '/#about'
+    weight = 10
+  [[menu.main]]
+    name = 'Experience'
+    url = '/#experience'
+    weight = 20
+  [[menu.main]]
+    name = 'Work & Research'
+    url = '/#works'
+    weight = 30
+  [[menu.main]]
+    name = 'Blog'
+    url = '/blog/'
+    weight = 40
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    weight = 1
+    contentDir = 'content'
+

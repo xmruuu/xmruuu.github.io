@@ -1,0 +1,25 @@
+{
+  "name": "mj.hsieh.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./static/css/site.css --watch",
+    "dev:hugo": "hugo server -D -F --disableFastRender",
+    "dev": "concurrently \"npm:dev:css\" \"npm:dev:hugo\"",
+    "build:css": "npx tailwindcss -i ./assets/css/tailwind.css -o ./static/css/site.css",
+    "build": "npm run build:css && hugo --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4"
+  }
+}

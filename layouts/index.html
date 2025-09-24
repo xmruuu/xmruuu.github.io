@@ -1,0 +1,240 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section id="hero" class="relative min-h-screen w-full overflow-hidden section-block">
+  <div id="interaction-layer"></div>
+  <div class="absolute inset-0 flex justify-center items-center overflow-hidden z-[1]">
+    <canvas id="particleCanvas" class="absolute z-[1] w-[110vmin] h-auto"></canvas>
+    <div class="absolute top-[60%] w-full text-center z-[2] text-base text-gray-700 font-light">
+      <p><strong>Hi, I'm Meng Ju Hsieh</strong><br>AI, BIM Software Developer & Data analyst</p>
+    </div>
+    <div class="absolute bottom-16 w-full flex justify-center">
+      <a href="#about" class="text-gray-700 text-3xl font-light">﹀</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Content Section -->
+<section id="about" class="relative min-h-screen overflow-hidden mx-auto scroll-mt-24 md:scroll-mt-28 section-block scroll-section">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-8 py-8">
+    <h2 class="text-center uppercase text-gray-600 font-light text-xl sm:text-2xl mb-8">About Me</h2>
+    <div class="m-auto flex flex-col items-center text-center">
+      <div class="w-[200px] h-[200px] rounded-full overflow-hidden relative bg-gray-100 mb-6">
+        <img class="w-full h-full object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" src="img/avatar.webp" alt="Hsieh Meng Ju">
+      </div>
+      <h2 class="m-0 text-2xl font-light pb-2">MENG-JU HSIEH | 謝孟儒</h2>
+      <div class="max-w-[800px] mx-auto px-4">
+        <p class="text-justify break-words text-[0.95rem] sm:text-base">
+          I am a master's researcher at <a href="https://www.ed.tum.de/ed/studium/studienangebot/information-technologies-for-the-built-environment-m-sc/" class="text-blue-500 font-bold no-underline">ITBE@TUM</a>,
+          focused on applying IT skills to advance the digitalization of AEC industry.
+          I specialize in developing <strong>BIM Automation & Data-Driven Solutions</strong> to simulate, optimize and support decision-making across the building lifecycle,
+          <strong>turning engineering complexity into actionable insights.</strong>
+          Outside of work, I enjoy hiking, playing guitar, and cooking creatively!⚡
+        </p>
+      </div>
+      <div class="flex justify-center gap-4 my-4">
+        <a class="text-black hover:text-gray-600 text-[17.5px]" href="https://www.linkedin.com/in/xmruuu/"><i class="fa fa-linkedin-square"></i></a>
+        <a class="text-black hover:text-gray-600 text-[17.5px]" href="https://github.com/xmruuu"><i class="fa fa-github"></i></a>
+        <a class="text-black hover:text-gray-600 text-[17.5px]" href="files/Resume_2025.pdf"><i class="fa fa-file-pdf-o"></i></a>
+        <a class="text-black hover:text-gray-600 text-[17.5px]" href="mailto:mj.hsieh@tum.de"><i class="fa fa-envelope"></i></a>
+        <a class="text-black hover:text-gray-600 text-[17.5px]" href="https://www.instagram.com/xmruuu/"><i class="fa fa-instagram"></i></a>
+      </div>
+      <div class="my-2">
+        <div class="my-2">
+          <div class="flex flex-wrap justify-center gap-2.5 sm:gap-5 mb-0" data-no-lightbox>
+            <!-- HTML, CSS, JS in order -->
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/HTML5.svg" alt="HTML5"><span class="text-[9px] sm:text-xs text-gray-600">HTML5</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/CSS3.svg" alt="CSS"><span class="text-[9px] sm:text-xs text-gray-600">CSS3</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/JavaScript_logo.svg" alt="JavaScript"><span class="text-[9px] sm:text-xs text-gray-600">JavaScript</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/csharp.svg" alt="C#"><span class="text-[9px] sm:text-xs text-gray-600">C#</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/NET core.svg" alt=".NET Core"><span class="text-[9px] sm:text-xs text-gray-600">.NET Core</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/Python.svg" alt="Python"><span class="text-[9px] sm:text-xs text-gray-600">Python</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/MySQL.svg" alt="MySQL"><span class="text-[9px] sm:text-xs text-gray-600">MySQL</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/excel.svg" alt="Excel VBA"><span class="text-[9px] sm:text-xs text-gray-600">Excel VBA</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/Power_BI.svg" alt="Power BI"><span class="text-[9px] sm:text-xs text-gray-600">Power BI</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <img class="w-[32px] h-[32px] sm:w-[48px] sm:h-[48px] object-contain" src="img/skills/pytorch.svg" alt="PyTorch"><span class="text-[9px] sm:text-xs text-gray-600">PyTorch</span>
+            </div>
+          </div>
+        </div>
+        <div class="my-2">
+          <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-10 max-[360px]:gap-2 max-[220px]:gap-1 mt-4" data-no-lightbox>
+            <!-- Order: Rhino, Grasshopper, Revit, Dynamo; size slightly larger -->
+            <div class="flex flex-col items-center text-center">
+              <img class="block w-[72px] sm:w-[120px] max-[360px]:w-[48px] max-[220px]:w-[28px] h-auto mb-0 object-contain" src="img/skills/rhinoceros.png" alt="Rhinoceros">
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <img class="block w-[72px] sm:w-[120px] max-[360px]:w-[48px] max-[220px]:w-[28px] h-auto mb-0 object-contain" src="img/skills/grasshopper.png" alt="Grasshopper">
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <img class="block w-[72px] sm:w-[120px] max-[360px]:w-[48px] max-[220px]:w-[28px] h-auto mb-0 object-contain" src="img/skills/revit.png" alt="Revit">
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <img class="block w-[72px] sm:w-[120px] max-[360px]:w-[48px] max-[220px]:w-[28px] h-auto mb-0 object-contain" src="img/skills/dynamo.png" alt="Dynamo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="relative min-h-screen overflow-hidden mx-auto scroll-mt-24 md:scroll-mt-28 section-block scroll-section">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-8 py-8">
+    <h2 class="text-center uppercase text-gray-600 font-light text-xl sm:text-2xl mb-4">Education</h2>
+      <div class="max-w-[700px] mx-auto">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><strong><a href="https://www.tum.de/en/" target="_blank">Technical University of Munich</a></strong></p>
+          <p>Munich, Germany</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><i>M.Sc. Information Technologies for the Built Environment</i></p>
+          <p><i>Oct 2024–</i></p>
+        </div>
+        <div class="mt-2 sm:ml-4 ml-2">
+          <p class="text-xs sm:text-sm text-gray-600">– Ministry of Education Government Scholarship to Study Abroad (GSSA)</p>
+          <p class="text-xs sm:text-sm text-gray-600">– TUM Merit-Based Waiver Scholarship for High-Achieving Students</p>
+        </div>
+      </div>
+      <div class="max-w-[700px] mx-auto mt-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><strong><a href="https://eng.cycu.edu.tw/" target="_blank">Chung Yuan Christian University</a></strong></p>
+          <p>Taoyuan, Taiwan</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><i>B.Arch. Architecture</i></p>
+          <p><i>Sep 2018–Jun 2023</i></p>
+        </div>
+        <div class="mt-2 sm:ml-4 ml-2">
+          <p class="text-xs sm:text-sm text-gray-600">– Yan Shih-Hsiao Alumni Scholarship</p>
+        </div>
+      </div>
+
+    <h2 class="text-center uppercase text-gray-600 font-light text-xl sm:text-2xl mb-4 mt-6">Experience</h2>
+    <div class="max-w-[700px] mx-auto">
+      <div class="mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><strong><a href="https://www.mod.construction/" target="_blank">MOD Prefabrication AI, Bimondis AG</a></strong></p>
+          <p>Munich, Germany</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><i>Working Student</i></p>
+          <p><i>Sep 2025–</i></p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><strong><a href="https://www.cee.ed.tum.de/en/ccbe/home/" target="_blank">Chair of Computing in Civil and Building Engineering, TUM</a></strong></p>
+          <p>Munich, Germany</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><i>Research Assistant</i></p>
+          <p><i>Aug 2025–</i></p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><strong><a href="https://www.sunhou.com.tw/" target="_blank">SUNHOU Architects & Partners Association</a></strong></p>
+          <p>Taoyuan, Taiwan</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><i>R&D Engineer</i></p>
+          <p><i>Aug 2025–</i></p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 mt-2 text-sm sm:text-base">
+          <p><i>Working Student</i></p>
+          <p><i>Sep 2020–Jun 2022</i></p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><strong><a href="https://www.facebook.com/cycuarchi/" target="_blank">Digital Research Community, CYCU Architecture</a></strong></p>
+          <p>Taoyuan, Taiwan</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><i>Co-Founder & Student Lead</i></p>
+          <p><i>2020–2023</i></p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><strong><a href="https://www.lwkp.com/" target="_blank">LWK & Partners (HK) Limited</a></strong></p>
+          <p>Beijing, China</p>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between flex-wrap gap-1 text-sm sm:text-base">
+          <p><i>Intern</i></p>
+          <p><i>Jul 2019–Aug 2019</i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Works Section -->
+<section id="works" class="relative min-h-screen overflow-hidden bg-transparent scroll-mt-24 md:scroll-mt-28 section-block">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-8 py-16 sm:py-20">
+    <h2 class="text-center uppercase text-gray-600 font-light text-xl sm:text-2xl mb-8">Works & Research</h2>
+    <div class="works-grid grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mx-auto">
+      {{ with site.GetPage "section" "work" }}
+        {{ if gt (len .Pages) 0 }}
+          {{ range .Pages.ByDate.Reverse }}
+            <a href="{{ .RelPermalink }}" class="group block rounded-lg overflow-visible transition-transform duration-300 hover:-translate-y-1 bg-transparent flex flex-row md:flex-col h-[120px] md:h-full">
+              <div class="relative shrink-0 w-[120px] h-[120px] md:w-full md:h-auto md:pb-[100%]">
+                <img class="absolute inset-0 w-full h-full {{ if eq .Params.coverFit "contain" }}object-contain bg-white p-1{{ else }}object-cover{{ end }}" src="{{ with .Params.image }}{{ . | relURL }}{{ else }}{{ "img/works/aec_hackathon_1.png" | relURL }}{{ end }}" alt="{{ .Title }}">
+              </div>
+              <div class="flex flex-col flex-1 px-3 py-2 md:px-4 md:py-4 md:w-full">
+                <h3 class="text-[0.95rem] md:text-[1.1rem] m-0 text-[#333] mb-1 md:mb-3 text-left card-title-2clamp">{{ .Title }}</h3>
+                <p class="text-[#666] overflow-hidden text-ellipsis break-words flex-grow text-left text-[0.8rem] md:text-[0.95rem] card-desc-4clamp">{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 200 }}{{ end }}</p>
+                <div class="tags mt-3 flex gap-1 md:gap-2 flex-wrap" style="min-height: 2em; align-items: flex-end;">
+                  {{ with .Params.tags }}{{ range . }}<span class="tag-badge text-[0.7rem] md:text-[0.875rem]">{{ . }}</span>{{ end }}{{ end }}
+                  {{ with .Params.location }}<span class="tag-badge text-[0.7rem] md:text-[0.875rem]">{{ . }}</span>{{ end }}
+                </div>
+              </div>
+            </a>
+          {{ end }}
+        {{ else }}
+          <div class="work-item bg-transparent rounded-lg overflow-visible transition-transform duration-300 hover:-translate-y-1 flex flex-col h-full">
+            <div class="relative w-full pb-[100%]">
+              <img class="absolute inset-0 w-full h-full object-cover" src="img/works/aec_hackathon_1.png" alt="Project 1">
+            </div>
+            <div class="flex flex-col flex-grow px-4 py-4">
+              <h3 class="text-[1.1rem] m-0 text-[#333] mb-3 text-center" style="min-height: 2.4em; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.2; justify-content: center; align-items: center;">AEC Hackathon Munich</h3>
+              <p class="text-[#666] overflow-hidden flex-grow text-justify" style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; line-height: 1.4; max-height: 4.2em; justify-content: center; align-items: center;">Created in 2013, the AEC Hackathon is the first hackathon focused on empowering built-environment professionals.</p>
+              <div class="tags mt-auto flex gap-2 flex-wrap" style="min-height: 2.5em; align-items: flex-end; margin-top: 1rem;">
+                <span class="px-3 py-1 bg-[#f0f0f0] rounded-2xl text-[0.875rem]">Research</span>
+                <span class="px-3 py-1 bg-[#f0f0f0] rounded-2xl text-[0.875rem]">Munich, Germany</span>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <!-- No arrow on last section -->
+</section>
+
+<!-- Load WebGL particle effect -->
+<script src="js/particle-webgl.js?v=20250923b"></script>
+{{ end }}

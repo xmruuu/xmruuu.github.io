@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="pt-24 md:pt-28 flex-1">
+  <div class="max-w-[800px] mx-auto px-8 prose prose-neutral">
+    <h1>{{ .Title }}</h1>
+    <div class="text-gray-500 flex items-center gap-3 text-sm">
+      <time>{{ .Date.Format "2006-01-02" }}</time>
+      <span>·</span>
+      {{ range .Params.tags }}<a class="tag-badge no-underline" href="{{ (site.GetPage (printf "/tags/%s" .)).RelPermalink }}">{{ . }}</a>{{ end }}
+    </div>
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
