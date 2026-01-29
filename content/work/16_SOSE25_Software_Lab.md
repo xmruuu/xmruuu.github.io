@@ -33,4 +33,10 @@ Analyzing IFC models provides valuable insights into design processes and suppor
     class="mx-auto text-center"
 >}}
 
+### Final Report
+
+<div class="not-prose" style="margin-top: 0.5rem; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 2rem; padding-right: 2rem; width: 100%;">
+  <embed src="/img/works/16_SOSE25_Software_Lab/G14A_FinalReport_mj.pdf#zoom=page-width&pagemode=none" type="application/pdf" style="display:block; width:100%; height:82vh; border:0;">
+</div>
+
 
